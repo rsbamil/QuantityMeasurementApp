@@ -1,0 +1,4 @@
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net8.0\QuantityMeasurementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net8.0\QuantityMeasurementApp.AssemblyInfoInputs.cache
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net8.0\QuantityMeasurementApp.AssemblyInfo.cs
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net8.0\QuantityMeasurementApp.csproj.CoreCompileInputs.cache
