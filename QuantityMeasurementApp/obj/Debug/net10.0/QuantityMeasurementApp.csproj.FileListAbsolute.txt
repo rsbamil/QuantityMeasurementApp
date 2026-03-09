@@ -1,0 +1,42 @@
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfoInputs.cache
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfo.cs
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.csproj.CoreCompileInputs.cache
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.exe
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.deps.json
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.runtimeconfig.json
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\refint\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.genruntimeconfig.cache
+D:\csharp\QuantityMeasurementApp\QuantityMeasurementApp\obj\Debug\net10.0\ref\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.exe
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.deps.json
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.runtimeconfig.json
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfoInputs.cache
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfo.cs
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.csproj.CoreCompileInputs.cache
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\refint\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.genruntimeconfig.cache
+D:\csharp\QuantityMeasurementApp - UC10 se aage ka\QuantityMeasurementApp\obj\Debug\net10.0\ref\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.exe
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.deps.json
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.runtimeconfig.json
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\bin\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfoInputs.cache
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.AssemblyInfo.cs
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.csproj.CoreCompileInputs.cache
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\refint\QuantityMeasurementApp.dll
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.pdb
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\QuantityMeasurementApp.genruntimeconfig.cache
+D:\csharp\QuantityMeasurementApp - UC14 or usse aage\QuantityMeasurementApp\obj\Debug\net10.0\ref\QuantityMeasurementApp.dll
