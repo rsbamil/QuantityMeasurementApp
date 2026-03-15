@@ -1,0 +1,91 @@
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.exe
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.deps.json
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.runtimeconfig.json
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.pdb
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppBusinessLayer.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppModelLayer.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppRepositoryLayer.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppBusinessLayer.pdb
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppModelLayer.pdb
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppRepositoryLayer.pdb
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.AssemblyInfo.cs
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\Quantity.24FC136C.Up2Date
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\refint\QuantityMeasurementApp.Console.dll
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.pdb
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.genruntimeconfig.cache
+C:\Users\DELL\Desktop\Practice\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\ref\QuantityMeasurementApp.Console.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.exe
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.deps.json
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.runtimeconfig.json
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementApp.Console.pdb
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppBusinessLayer.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppModelLayer.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppRepositoryLayer.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppBusinessLayer.pdb
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppModelLayer.pdb
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\QuantityMeasurementAppRepositoryLayer.pdb
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.csproj.AssemblyReference.cache
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.AssemblyInfoInputs.cache
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.AssemblyInfo.cs
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.csproj.CoreCompileInputs.cache
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\Quantity.24FC136C.Up2Date
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\refint\QuantityMeasurementApp.Console.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.pdb
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\QuantityMeasurementApp.Console.genruntimeconfig.cache
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\obj\Debug\net10.0\ref\QuantityMeasurementApp.Console.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Azure.Core.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Azure.Identity.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.Caching.Memory.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.Options.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Extensions.Primitives.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.ClientModel.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.Diagnostics.EventLog.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.Memory.Data.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.Security.Cryptography.Pkcs.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.Messages.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
+D:\rohit mase\QuantityMeasurementApp\QuantityMeasurementApp\QuantityMeasurementApp.Console\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
