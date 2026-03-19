@@ -1,14 +1,15 @@
 using QuantityMeasurementApp.Console.Controller;
+using QuantityMeasurementApp.Console.Interface;
 using QuantityMeasurementAppBusinessLayer.Interface;
 using QuantityMeasurementAppModelLayer.DTOs;
 
 namespace QuantityMeasurementApp.Console.Menu
 {
-    public class Menu
+    public class Menu : IMenu
     {
-        public IQuantityMeasurementService _controller;
+        public QuantityMeasurementController _controller;
 
-        public Menu(IQuantityMeasurementService controller)
+        public Menu(QuantityMeasurementController controller)
         {
             _controller = controller;
         }
@@ -20,8 +21,10 @@ namespace QuantityMeasurementApp.Console.Menu
                 System.Console.WriteLine("\n===== Quantity Measurement Menu =====");
                 System.Console.WriteLine("1. Compare Quantities");
                 System.Console.WriteLine("2. Add Quantities");
-                System.Console.WriteLine("3. Show History");
-                System.Console.WriteLine("4. Exit");
+                System.Console.WriteLine("3. Subtract Quantities");
+                System.Console.WriteLine("4. Divide Quantities");
+                System.Console.WriteLine("5. Show History");
+                System.Console.WriteLine("6. Exit");
                 System.Console.Write("Enter your choice: ");
 
                 string? choice = System.Console.ReadLine();
@@ -35,9 +38,15 @@ namespace QuantityMeasurementApp.Console.Menu
                         AddFlow();
                         break;
                     case "3":
-                        ShowHistory();
+                        SubtractFlow();
                         break;
                     case "4":
+                        DivideFlow();
+                        break;
+                    case "5":
+                        ShowHistory();
+                        break;
+                    case "6":
                         System.Console.WriteLine("Exiting application...");
                         return;
                     default:
@@ -52,7 +61,7 @@ namespace QuantityMeasurementApp.Console.Menu
             var first = ReadQuantity("First");
             var second = ReadQuantity("Second");
 
-            bool result = _controller.Compare(first, second);
+            bool result = _controller.CompareQuantities(first, second);
             System.Console.WriteLine($"Comparison Result: {result}");
         }
 
@@ -61,13 +70,30 @@ namespace QuantityMeasurementApp.Console.Menu
             var first = ReadQuantity("First");
             var second = ReadQuantity("Second");
 
-            var result = _controller.Add(first, second);
-            System.Console.WriteLine($"Addition Result: {result.BaseValue} {result.Unit}");
+            var result = _controller.AddQuantities(first, second);
+            System.Console.WriteLine($"Addition Result: {result.Value} {result.Unit}");
         }
 
+        private void SubtractFlow()
+        {
+            var first = ReadQuantity("First");
+            var second = ReadQuantity("Second");
+
+            var result = _controller.SubtractQuantities(first, second);
+            System.Console.WriteLine($"Subtraction Result: {result.Value} {result.Unit}");
+        }
+
+        private void DivideFlow()
+        {
+            var first = ReadQuantity("first");
+            var second = ReadQuantity("second");
+
+            var result = _controller.DivideQuantities(first, second);
+            System.Console.WriteLine($"Division Result: {result.Value} {result.Unit}");
+        }
         private void ShowHistory()
         {
-            var history = _controller.GetHistory();
+            var history = _controller.GetAllHistory();
 
             if (history.Count == 0)
             {
@@ -77,7 +103,7 @@ namespace QuantityMeasurementApp.Console.Menu
 
             foreach (var item in history)
             {
-                System.Console.WriteLine($"Id: {item.Id}, Value: {item.Value}, Unit: {item.Unit}, Category: {item.Category}");
+                System.Console.WriteLine($"Id: {item.Id}, Value1: {item.Value1},Value2: {item.Value2} Unit1: {item.Unit1},Unit2:{item.Unit2}, Category: {item.Category}, Operation: {item.Operation}, Result: {item.Result}");
             }
         }
 

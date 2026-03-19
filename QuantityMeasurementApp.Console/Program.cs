@@ -3,10 +3,12 @@ using QuantityMeasurementAppRepositoryLayer.Database;
 using QuantityMeasurementAppBusinessLayer.Interface;
 using QuantityMeasurementAppBusinessLayer.Service;
 using QuantityMeasurementAppRepositoryLayer.Interface;
+using QuantityMeasurementApp.Console.Controller;
 
 
 IQuantityMeasurementRepository repository = new QuantityMeasurementDatabaseRepository();
 IQuantityMeasurementService service = new QuantityMeasurementService(repository);
-Menu menu = new Menu(service);
+QuantityMeasurementController controller = new QuantityMeasurementController(service);
+Menu menu = new Menu(controller);
 
 menu.Show();

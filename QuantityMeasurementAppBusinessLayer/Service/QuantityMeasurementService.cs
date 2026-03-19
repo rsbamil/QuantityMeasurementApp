@@ -3,6 +3,7 @@ using QuantityMeasurementAppBusinessLayer.Interface;
 using QuantityMeasurementAppModelLayer.DTOs;
 using QuantityMeasurementAppModelLayer.Models;
 using QuantityMeasurementAppRepositoryLayer.Interface;
+using QuantityMeasurementAppModelLayer.Enums;
 
 namespace QuantityMeasurementAppBusinessLayer.Service
 {
@@ -25,14 +26,13 @@ namespace QuantityMeasurementAppBusinessLayer.Service
 
             double firstBase = ConvertToBase(first);
             double secondBase = ConvertToBase(second);
+            double result = firstBase.CompareTo(secondBase);
+            SaveHistory(first, second, "compare", result);
 
-            SaveHistory(first);
-            SaveHistory(second);
-
-            return Math.Abs(firstBase - secondBase) < 0.0001;
+            return firstBase.CompareTo(secondBase) == 0;
         }
 
-        public QuantityModel Add(QuantityDTO first, QuantityDTO second)
+        public QuantityDTO Add(QuantityDTO first, QuantityDTO second)
         {
             Validate(first);
             Validate(second);
@@ -45,99 +45,190 @@ namespace QuantityMeasurementAppBusinessLayer.Service
 
             double firstBase = ConvertToBase(first);
             double secondBase = ConvertToBase(second);
+            double result = firstBase + secondBase;
 
-            SaveHistory(first);
-            SaveHistory(second);
+            SaveHistory(first, second, "addition", result);
 
-            return new QuantityModel
+            return new QuantityDTO
             {
-                BaseValue = firstBase + secondBase,
+                Value = firstBase + secondBase,
                 Unit = GetBaseUnit(first.Category),
                 Category = first.Category
             };
         }
 
+        public QuantityDTO Subtract(QuantityDTO first, QuantityDTO second)
+        {
+            Validate(first);
+            Validate(second);
+
+            if (!first.Category.Equals(second.Category, StringComparison.OrdinalIgnoreCase))
+                throw new QuantityMeasurementException("Cannot subtract different categories.");
+
+            if (first.Category.Equals("Temperature", StringComparison.OrdinalIgnoreCase))
+                throw new QuantityMeasurementException("Subtraction of temperature is not supported.");
+
+            double firstBase = ConvertToBase(first);
+            double secondBase = ConvertToBase(second);
+            double result = firstBase - secondBase;
+
+            SaveHistory(first, second, "subtract", result);
+
+            return new QuantityDTO
+            {
+                Value = firstBase - secondBase,
+                Unit = GetBaseUnit(first.Category),
+                Category = first.Category
+            };
+        }
+
+        public QuantityDTO Division(QuantityDTO first, QuantityDTO second)
+        {
+            Validate(first);
+            Validate(second);
+            if (!first.Category.Equals(second.Category, StringComparison.OrdinalIgnoreCase))
+            {
+                throw new QuantityMeasurementException("Cannot divide different categories.");
+            }
+            if (first.Category.Equals("Temperature", StringComparison.OrdinalIgnoreCase) || second.Category.Equals("Temperature", StringComparison.OrdinalIgnoreCase))
+            {
+                throw new QuantityMeasurementException("Division of temperature is not supported.");
+            }
+
+            double firstBase = ConvertToBase(first);
+            double secondBase = ConvertToBase(second);
+            double result = firstBase / secondBase;
+
+            SaveHistory(first, second, "division", result);
+
+            return new QuantityDTO
+            {
+                Value = firstBase / secondBase,
+                Unit = GetBaseUnit(first.Category),
+                Category = first.Category
+            };
+        }
         public List<QuantityMeasurementEntity> GetHistory()
         {
             return _repository.GetAll();
         }
 
-        private void SaveHistory(QuantityDTO dto)
+        private void SaveHistory(QuantityDTO dto1, QuantityDTO dto2, string Operation, double result)
         {
             _repository.Save(new QuantityMeasurementEntity
             {
-                Value = dto.Value,
-                Unit = dto.Unit,
-                Category = dto.Category
+                Value1 = dto1.Value,
+                Value2 = dto2.Value,
+                Unit1 = dto1.Unit,
+                Unit2 = dto2.Unit,
+                Category = dto1.Category,
+                Operation = Operation,
+                Result = result
             });
         }
 
         private void Validate(QuantityDTO dto)
         {
             if (dto == null)
+            {
                 throw new QuantityMeasurementException("Quantity cannot be null.");
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Category))
+            {
                 throw new QuantityMeasurementException("Category is required.");
+            }
 
             if (string.IsNullOrWhiteSpace(dto.Unit))
+            {
                 throw new QuantityMeasurementException("Unit is required.");
+            }
         }
 
         private double ConvertToBase(QuantityDTO dto)
         {
-            string category = dto.Category.Trim().ToLower();
-            string unit = dto.Unit.Trim().ToLower();
+            string category = dto.Category.ToLower();
 
-            return category switch
+            switch (category)
             {
-                "length" => unit switch
-                {
-                    "inch" => dto.Value,
-                    "feet" => dto.Value * 12,
-                    "yard" => dto.Value * 36,
-                    "centimeter" => dto.Value / 2.54,
-                    _ => throw new QuantityMeasurementException("Invalid length unit.")
-                },
+                case "length":
+                    var lengthUnit = Enum.Parse<LengthUnit>(dto.Unit, true);
 
-                "weight" => unit switch
-                {
-                    "gram" => dto.Value,
-                    "kilogram" => dto.Value * 1000,
-                    "tonne" => dto.Value * 1000000,
-                    _ => throw new QuantityMeasurementException("Invalid weight unit.")
-                },
+                    return lengthUnit switch
+                    {
+                        LengthUnit.Inch => dto.Value,
+                        LengthUnit.Feet => dto.Value * 12,
+                        LengthUnit.Yard => dto.Value * 36,
+                        LengthUnit.Centimeter => dto.Value * 0.393701,
+                        _ => throw new QuantityMeasurementException("Invalid Length Unit")
+                    };
 
-                "volume" => unit switch
-                {
-                    "milliliter" => dto.Value,
-                    "liter" => dto.Value * 1000,
-                    "gallon" => dto.Value * 3785.41,
-                    _ => throw new QuantityMeasurementException("Invalid volume unit.")
-                },
+                case "weight":
+                    var weightUnit = Enum.Parse<WeightUnit>(dto.Unit, true);
 
-                "temperature" => unit switch
-                {
-                    "celsius" => dto.Value,
-                    "fahrenheit" => (dto.Value - 32) * 5 / 9,
-                    "kelvin" => dto.Value - 273.15,
-                    _ => throw new QuantityMeasurementException("Invalid temperature unit.")
-                },
+                    return weightUnit switch
+                    {
+                        WeightUnit.Gram => dto.Value,
+                        WeightUnit.Kilogram => dto.Value * 1000,
+                        WeightUnit.Pound => dto.Value * 453.592,
+                        _ => throw new QuantityMeasurementException("Invalid Weight Unit")
+                    };
 
-                _ => throw new QuantityMeasurementException("Invalid category.")
-            };
+                case "volume":
+                    var volumeUnit = Enum.Parse<VolumeUnit>(dto.Unit, true);
+
+                    return volumeUnit switch
+                    {
+                        VolumeUnit.Millilitre => dto.Value,
+                        VolumeUnit.Litre => dto.Value * 1000,
+                        VolumeUnit.Gallon => dto.Value * 3785.41,
+                        _ => throw new QuantityMeasurementException("Invalid Volume Unit")
+                    };
+
+                case "temperature":
+                    var tempUnit = Enum.Parse<TemperatureUnit>(dto.Unit, true);
+
+                    return tempUnit switch
+                    {
+                        TemperatureUnit.Celsius => dto.Value,
+                        TemperatureUnit.Fahrenheit => (dto.Value - 32) * 5 / 9,
+                        TemperatureUnit.Kelvin => dto.Value - 273.15,
+                        _ => throw new QuantityMeasurementException("Invalid Temperature Unit")
+                    };
+
+                default:
+                    throw new QuantityMeasurementException("Invalid Category");
+            }
         }
 
         private string GetBaseUnit(string category)
         {
-            return category.Trim().ToLower() switch
+            string result;
+
+            switch (category.Trim().ToLower())
             {
-                "length" => "Inch",
-                "weight" => "Gram",
-                "volume" => "Milliliter",
-                "temperature" => "Celsius",
-                _ => "Unknown"
-            };
+                case "length":
+                    result = "Inch";
+                    break;
+
+                case "weight":
+                    result = "Gram";
+                    break;
+
+                case "volume":
+                    result = "Millilitre";
+                    break;
+
+                case "temperature":
+                    result = "Celsius";
+                    break;
+
+                default:
+                    result = "Unknown";
+                    break;
+            }
+
+            return result;
         }
     }
 }
