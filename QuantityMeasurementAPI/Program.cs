@@ -1,4 +1,8 @@
 using Microsoft.IdentityModel.Tokens;
+using QuantityMeasurementAppBusinessLayer.Interface;
+using QuantityMeasurementAppBusinessLayer.Service;
+using QuantityMeasurementAppRepositoryLayer.Database;
+using QuantityMeasurementAppRepositoryLayer.Interface;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +26,13 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_SUPER_SECRET_KEY_1234567890"))
     };
 });
+
 builder.Services.AddAuthorization();
 
+// Dependency Injection
+builder.Services.AddScoped<IAuthService, QuantityMeasurementAuthService>();
+builder.Services.AddScoped<IQuantityMeasurementService, QuantityMeasurementService>();
+builder.Services.AddScoped<IQuantityMeasurementRepository, QuantityMeasurementDatabaseRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
