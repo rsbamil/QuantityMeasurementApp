@@ -10,11 +10,18 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using QuantityMeasurementAppModelLayer.Utils;
 namespace QuantityMeasurementAppBusinessLayer.Service
 {
     public class QuantityMeasurementAuthService : IAuthService
     {
-        private readonly IQuantityMeasurementRepository _repository = new QuantityMeasurementDatabaseRepository();
+        private readonly IQuantityMeasurementRepository _repository;
+        private readonly JwtSettings _jwtSettings;
+        public QuantityMeasurementAuthService(IQuantityMeasurementRepository _repository, JwtSettings jwtSettings)
+        {
+            this._repository = _repository;
+            _jwtSettings = jwtSettings;
+        }
         private readonly PasswordHasher<UserEntity> _passwordHasher = new();
         public void SaveUsers(RegisterDTO user)
         {
@@ -69,12 +76,12 @@ namespace QuantityMeasurementAppBusinessLayer.Service
                 new Claim("UserId",user.Id.ToString())
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_SUPER_SECRET_KEY_1234567890"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "QuantityMeasurementAPI",
-                audience: "QuantityMeasurementAPI",
+                issuer: _jwtSettings.Issuer,
+                audience: _jwtSettings.Audience,
                 claims: claims,
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds

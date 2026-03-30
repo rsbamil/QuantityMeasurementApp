@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using QuantityMeasurementAppBusinessLayer.Interface;
+using Microsoft.AspNetCore.Authorization;
 namespace QuantityMeasurementAPI.Controllers
 {
     [Route("/api")]

@@ -1,17 +1,29 @@
 using Microsoft.IdentityModel.Tokens;
 using QuantityMeasurementAppBusinessLayer.Interface;
 using QuantityMeasurementAppBusinessLayer.Service;
+using QuantityMeasurementAppModelLayer.Utils;
 using QuantityMeasurementAppRepositoryLayer.Database;
 using QuantityMeasurementAppRepositoryLayer.Interface;
+// using QuantityMeasurementAPI.Middleware;
+
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Bind JWT settings from configuration
+var jwtSettings = new JwtSettings();
+builder.Configuration.GetSection("Jwt").Bind(jwtSettings);
+builder.Services.AddSingleton(jwtSettings);
+
+// Set the connection string for the repository layer from Configuration
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+ConnectionConfig.ConnectionString = connectionString;
+
 builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -21,9 +33,9 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
 
-        ValidIssuer = "QuantityMeasurementAPI",
-        ValidAudience = "QuantityMeasurementAPI",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_SUPER_SECRET_KEY_1234567890"))
+        ValidIssuer = jwtSettings.Issuer,
+        ValidAudience = jwtSettings.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
     };
 });
 
@@ -38,12 +50,13 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwagger();
+    app.UseSwagger();     
     app.UseSwaggerUI();
 }
-
+// app.UseMiddleware<GlobalExceptionHandler>();
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 

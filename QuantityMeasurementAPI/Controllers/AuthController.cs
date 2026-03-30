@@ -1,10 +1,5 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuantityMeasurementAppModelLayer.DTOs;
-using QuantityMeasurementAppBusinessLayer.Service;
-using QuantityMeasurementAppRepositoryLayer.Database;
-using QuantityMeasurementAppModelLayer.Models;
-using Microsoft.AspNetCore.Identity;
 using QuantityMeasurementAppBusinessLayer.Interface;
 using QuantityMeasurementAppRepositoryLayer.Interface;
 namespace QuantityMeasurementAPI.Controllers
@@ -35,7 +30,7 @@ namespace QuantityMeasurementAPI.Controllers
         {
             if (string.IsNullOrEmpty(register.Username) || string.IsNullOrEmpty(register.Password) || string.IsNullOrEmpty(register.Email) || string.IsNullOrEmpty(register.Phone))
             {
-                return BadRequest("Username, Password, Email and Phone are required.");
+                return BadRequest("Username,Password,Email and Phone are required.");
             }
             authService.SaveUsers(register);
             return Ok("Registration successful");
