@@ -9,6 +9,7 @@ namespace QuantityMeasurementAppBusinessLayer.Interface
         QuantityDTO Add(QuantityDTO first, QuantityDTO second);
         QuantityDTO Subtract(QuantityDTO first, QuantityDTO second);
         QuantityDTO Division(QuantityDTO first, QuantityDTO second);
+        QuantityDTO Convert(QuantityDTO quantity , string targetUnit);
         List<QuantityMeasurementEntity> GetHistory();
     }
 }

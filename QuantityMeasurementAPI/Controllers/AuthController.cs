@@ -26,14 +26,28 @@ namespace QuantityMeasurementAPI.Controllers
             return Ok(new { message = "Login successful", isValidUser });
         }
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterDTO register)
+public IActionResult Register([FromBody] RegisterDTO register)
+{
+    try
+    {
+        if (register == null ||
+            string.IsNullOrEmpty(register.Username) ||
+            string.IsNullOrEmpty(register.Password) ||
+            string.IsNullOrEmpty(register.Email) ||
+            string.IsNullOrEmpty(register.Phone))
         {
-            if (string.IsNullOrEmpty(register.Username) || string.IsNullOrEmpty(register.Password) || string.IsNullOrEmpty(register.Email) || string.IsNullOrEmpty(register.Phone))
-            {
-                return BadRequest("Username,Password,Email and Phone are required.");
-            }
-            authService.SaveUsers(register);
-            return Ok("Registration successful");
+            return BadRequest(new { message = "All fields are required" });
         }
+
+        authService.SaveUsers(register);
+
+        return Ok(new { message = "Registration Successful" });
+    }
+    catch (Exception ex)
+    {
+        // 👇 THIS IS THE MAIN FIX
+        return StatusCode(500, new { message = ex.Message });
+    }
+}
     }
 }
