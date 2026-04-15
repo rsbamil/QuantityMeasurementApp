@@ -2547,9 +2547,12 @@ dotnet test                   # Run all tests including security tests
 - Security headers applied to all HTTP responses
 - Rate limiting active on authentication endpoints
 - All security-focused MSTest tests passing
+<<<<<<< HEAD
 
 ---
 
 ## License
 
 This project is developed for educational purposes as part of a progressive learning curriculum covering C#, .NET, ASP.NET Core REST APIs, database integration, and enterprise security patterns.
+=======
+>>>>>>> abe504edaa4d076ba447dcd1f0f828074d36df83
