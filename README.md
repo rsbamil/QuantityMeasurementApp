@@ -122,27 +122,11 @@ While ensuring:
 ---
 
 ## Test Scenarios
-- ✔️ Same values should return true  
-- ✔️ Different values should return false  
-- ✔️ Null comparison should return false  
-- ✔️ Same reference should return true  
-- ✔️ Non-numeric input handling  
-
----
-
-## Example
-
-**Input:**  
-1.0 inch and 1.0 inch  
-
-**Output:**  
-Equal (true)  
-
-**Input:**  
-1.0 ft and 1.0 ft  
-
-**Output:**  
-Equal (true)
+-  Same values should return true  
+-  Different values should return false  
+-  Null comparison should return false  
+-  Same reference should return true  
+-  Non-numeric input handling  
 
 ---
 
@@ -218,22 +202,6 @@ To:
 4. Values are converted to a **base unit (feet)**  
 5. Converted values are compared using `equals()`  
 6. Result (`true` / `false`) is returned  
-
----
-
-## Example
-
-**Input:**  
-Quantity(1.0, "feet") and Quantity(12.0, "inches")  
-
-**Output:**  
-Equal (true)  
-
-**Input:**  
-Quantity(1.0, "inch") and Quantity(1.0, "inch")  
-
-**Output:**  
-Equal (true)
 
 ---
 
@@ -339,28 +307,6 @@ To:
 | 1 Inch | 1/12 Feet |
 | 1 Yard | 3 Feet |
 | 1 cm | 0.393701 Inches |
-
----
-
-## Example
-
-**Input:**  
-Quantity(1.0, YARDS) and Quantity(3.0, FEET)  
-
-**Output:**  
-Equal (true)  
-
-**Input:**  
-Quantity(1.0, YARDS) and Quantity(36.0, INCHES)  
-
-**Output:**  
-Equal (true)  
-
-**Input:**  
-Quantity(1.0, CENTIMETERS) and Quantity(0.393701, INCHES)  
-
-**Output:**  
-Equal (true)
 
 ---
 
@@ -480,34 +426,6 @@ result = value × (sourceUnit.factor / targetUnit.factor)
 
 ---
 
-## Example
-
-**Input:**  
-convert(1.0, FEET, INCHES)  
-
-**Output:**  
-12.0  
-
-**Input:**  
-convert(3.0, YARDS, FEET)  
-
-**Output:**  
-9.0  
-
-**Input:**  
-convert(36.0, INCHES, YARDS)  
-
-**Output:**  
-1.0  
-
-**Input:**  
-convert(1.0, CENTIMETERS, INCHES)  
-
-**Output:**  
-0.393701  
-
----
-
 ## Concepts Used
 
 ### Enum with Conversion Factors
@@ -561,20 +479,6 @@ convert(1.0, CENTIMETERS, INCHES)
 - NaN / Infinity → Exception  
 
 ---
-
-## Sample Test Cases
-
-- `testConversion_FeetToInches()`  
-- `testConversion_InchesToFeet()`  
-- `testConversion_YardsToInches()`  
-- `testConversion_CmToInches()`  
-- `testConversion_RoundTrip()`  
-- `testConversion_ZeroValue()`  
-- `testConversion_NegativeValue()`  
-- `testConversion_InvalidUnit()`  
-- `testConversion_NaNOrInfinite()`  
-
-
 
 ## Conclusion
 
@@ -642,34 +546,6 @@ final = result / firstUnit.factor
 
 ---
 
-## Example
-
-**Input:**  
-add(Quantity(1.0, FEET), Quantity(2.0, FEET))  
-
-**Output:**  
-Quantity(3.0, FEET)  
-
-**Input:**  
-add(Quantity(1.0, FEET), Quantity(12.0, INCHES))  
-
-**Output:**  
-Quantity(2.0, FEET)  
-
-**Input:**  
-add(Quantity(12.0, INCHES), Quantity(1.0, FEET))  
-
-**Output:**  
-Quantity(24.0, INCHES)  
-
-**Input:**  
-add(Quantity(1.0, YARDS), Quantity(3.0, FEET))  
-
-**Output:**  
-Quantity(2.0, YARDS)  
-
----
-
 ## Concepts Used
 
 ### Arithmetic on Value Objects
@@ -692,51 +568,8 @@ Quantity(2.0, YARDS)
 - Only valid units allowed  
 
 ### Mathematical Properties
-- Addition is commutative  
-
----
-
-## Test Scenarios
-
-### Same Unit Addition
-- 1 ft + 2 ft = 3 ft  
-
-### Cross Unit Addition
-- 1 ft + 12 in = 2 ft  
-
-### Reverse Unit Addition
-- 12 in + 1 ft = 24 in  
-
-### Yard Conversion
-- 1 yd + 3 ft = 2 yd  
-
-### CM Conversion
-- 2.54 cm + 1 in ≈ 5.08 cm  
-
-### Identity (Zero)
-- 5 ft + 0 in = 5 ft  
-
-### Negative Values
-- 5 ft + (-2 ft) = 3 ft  
-
-### Commutativity
-- A + B = B + A  
-
----
-
-## Sample Test Cases
-
-- `testAddition_SameUnit_FeetPlusFeet()`  
-- `testAddition_SameUnit_InchPlusInch()`  
-- `testAddition_CrossUnit_FeetPlusInches()`  
-- `testAddition_CrossUnit_InchPlusFeet()`  
-- `testAddition_CrossUnit_YardPlusFeet()`  
-- `testAddition_CrossUnit_CmPlusInch()`  
-- `testAddition_Commutativity()`  
-- `testAddition_WithZero()`  
-- `testAddition_NegativeValues()`  
-- `testAddition_NullOperand()`  
-
+- Addition is commutative
+  
 ---
 
 ## Conclusion
@@ -799,35 +632,6 @@ To:
 baseSum = value1_in_base + value2_in_base
 final = baseSum / targetUnit.factor
 
-
----
-
-## Example
-
-**Input:**  
-add(Quantity(1.0, FEET), Quantity(12.0, INCHES), FEET)  
-
-**Output:**  
-Quantity(2.0, FEET)  
-
-**Input:**  
-add(Quantity(1.0, FEET), Quantity(12.0, INCHES), INCHES)  
-
-**Output:**  
-Quantity(24.0, INCHES)  
-
-**Input:**  
-add(Quantity(1.0, FEET), Quantity(12.0, INCHES), YARDS)  
-
-**Output:**  
-Quantity(~0.667, YARDS)  
-
-**Input:**  
-add(Quantity(36.0, INCHES), Quantity(1.0, YARDS), FEET)  
-
-**Output:**  
-Quantity(6.0, FEET)  
-
 ---
 
 ## Concepts Used
@@ -850,48 +654,6 @@ Quantity(6.0, FEET)
 
 ### Functional Design
 - Pure function behavior (same input → same output)  
-
----
-
-## Test Scenarios
-
-### Target Unit = First Operand
-- Result in FEET  
-
-### Target Unit = Second Operand
-- Result in INCHES  
-
-### Target Unit = Different Unit
-- Result in YARDS / CM  
-
-### Commutativity
-- A + B = B + A (same target unit)  
-
-### Zero Handling
-- 5 ft + 0 in → correct result  
-
-### Negative Values
-- Handles subtraction via addition  
-
-### Large/Small Values
-- Precision maintained  
-
-### Invalid Input
-- Null target unit → exception  
-
----
-
-## Sample Test Cases
-
-- `testAddition_TargetUnit_Feet()`  
-- `testAddition_TargetUnit_Inches()`  
-- `testAddition_TargetUnit_Yards()`  
-- `testAddition_TargetUnit_Centimeters()`  
-- `testAddition_Commutativity_WithTargetUnit()`  
-- `testAddition_WithZero_TargetUnit()`  
-- `testAddition_NegativeValues_TargetUnit()`  
-- `testAddition_NullTargetUnit()`  
-- `testAddition_LargeScaleConversion()`  
 
 ---
 
@@ -956,39 +718,7 @@ To:
 | CENTIMETERS  | 1/30.48 ≈ 0.0328            |
 
 ---
-## Example
 
-**Input:**  
-`LengthUnit.INCHES.convertToBaseUnit(12.0)`  
-**Output:**  
-`1.0` (feet)
-
-**Input:**  
-`LengthUnit.INCHES.convertFromBaseUnit(1.0)`  
-**Output:**  
-`12.0` (inches)
-
-**Input:**  
-`Quantity(1.0, FEET).convertTo(INCHES)`  
-**Output:**  
-`Quantity(12.0, INCHES)`
-
-**Input:**  
-`Quantity(1.0, FEET).add(Quantity(12.0, INCHES), FEET)`  
-**Output:**  
-`Quantity(2.0, FEET)`
-
-**Input:**  
-`Quantity(36.0, INCHES).equals(Quantity(1.0, YARDS))`  
-**Output:**  
-`true`
-
-**Input:**  
-`Quantity(2.54, CENTIMETERS).convertTo(INCHES)`  
-**Output:**  
-`Quantity(~1.0, INCHES)`
-
----
 ## Concepts Used
 ### Single Responsibility Principle (SRP)
 - `LengthUnit` handles conversions  
@@ -1019,91 +749,8 @@ To:
 - Backward compatibility maintained throughout  
 
 ---
-## Refactoring Steps
 
-### Step 1 – Extract LengthUnit as Standalone Enum
-- Move `LengthUnit` from inside `QuantityLength` to top-level class  
-- Retain all constants: `FEET`, `INCHES`, `YARDS`, `CENTIMETERS`  
-- Add `convertToBaseUnit(double value)` method  
-- Add `convertFromBaseUnit(double baseValue)` method  
 
-### Step 2 – Refactor QuantityLength
-- Remove all internal conversion logic  
-- Delegate all conversion operations to `LengthUnit` methods  
-
-### Step 3 – Update All References
-- Ensure all imports reference standalone `LengthUnit`  
-- Remove any assumptions of `LengthUnit` being nested  
-
-### Step 4 – Maintain Backward Compatibility
-- Public API of `QuantityLength` remains unchanged  
-- All existing method signatures and behaviors preserved  
-
-### Step 5 – Verify All Test Cases
-- Run all UC1–UC7 test cases without modification  
-- Confirm no regressions in equality, conversion, or addition  
-
----
-## Test Scenarios
-### LengthUnit Enum Constants
-- Verify `FEET`, `INCHES`, `YARDS`, `CENTIMETERS` accessible as standalone  
-
-### convertToBaseUnit
-- Feet → Feet (no change)  
-- Inches → Feet  
-- Yards → Feet  
-- Centimeters → Feet  
-
-### convertFromBaseUnit
-- Feet → Feet (no change)  
-- Feet → Inches  
-- Feet → Yards  
-- Feet → Centimeters  
-
-### Refactored QuantityLength
-- Equality using delegated conversion  
-- `convertTo()` using unit methods  
-- `add()` with and without target unit  
-
-### Invalid Input
-- Null unit → exception  
-- `Double.NaN` value → exception  
-
-### Backward Compatibility
-- All UC1–UC7 test cases pass unchanged  
-
-### Round-Trip Conversion
-- `convert(convert(value, A→B), B→A) ≈ value` within epsilon  
-
----
-## Sample Test Cases
-- `testLengthUnitEnum_FeetConstant()`  
-- `testLengthUnitEnum_InchesConstant()`  
-- `testLengthUnitEnum_YardsConstant()`  
-- `testLengthUnitEnum_CentimetersConstant()`  
-- `testConvertToBaseUnit_FeetToFeet()`  
-- `testConvertToBaseUnit_InchesToFeet()`  
-- `testConvertToBaseUnit_YardsToFeet()`  
-- `testConvertToBaseUnit_CentimetersToFeet()`  
-- `testConvertFromBaseUnit_FeetToFeet()`  
-- `testConvertFromBaseUnit_FeetToInches()`  
-- `testConvertFromBaseUnit_FeetToYards()`  
-- `testConvertFromBaseUnit_FeetToCentimeters()`  
-- `testQuantityLengthRefactored_Equality()`  
-- `testQuantityLengthRefactored_ConvertTo()`  
-- `testQuantityLengthRefactored_Add()`  
-- `testQuantityLengthRefactored_AddWithTargetUnit()`  
-- `testQuantityLengthRefactored_NullUnit()`  
-- `testQuantityLengthRefactored_InvalidValue()`  
-- `testBackwardCompatibility_UC1EqualityTests()`  
-- `testBackwardCompatibility_UC5ConversionTests()`  
-- `testBackwardCompatibility_UC6AdditionTests()`  
-- `testBackwardCompatibility_UC7AdditionWithTargetUnitTests()`  
-- `testRoundTripConversion_RefactoredDesign()`  
-- `testUnitImmutability()`  
-- `testArchitecturalScalability_MultipleCategories()`  
-
----
 ## Conclusion
 UC8 enhances the system by introducing a **clean architectural separation** between unit conversion logic and quantity domain logic.  
 By extracting `LengthUnit` as a standalone enum with full conversion responsibility, the system becomes:
@@ -1166,45 +813,9 @@ To:
 | POUND      | 0.453592                  |
 
 ---
-## Example
 
-**Equality:**  
-`Quantity(1.0, KILOGRAM).equals(Quantity(1000.0, GRAM))`  
-→ `true`
-
-`Quantity(1.0, KILOGRAM).equals(Quantity(~2.20462, POUND))`  
-→ `true` (within epsilon)
-
-`Quantity(500.0, GRAM).equals(Quantity(0.5, KILOGRAM))`  
-→ `true`
-
-**Conversion:**  
-`Quantity(1.0, KILOGRAM).convertTo(GRAM)`  
-→ `Quantity(1000.0, GRAM)`
-
-`Quantity(2.0, POUND).convertTo(KILOGRAM)`  
-→ `Quantity(~0.907184, KILOGRAM)`
-
-`Quantity(500.0, GRAM).convertTo(POUND)`  
-→ `Quantity(~1.10231, POUND)`
-
-**Addition (Implicit Target Unit):**  
-`Quantity(1.0, KILOGRAM).add(Quantity(1000.0, GRAM))`  
-→ `Quantity(2.0, KILOGRAM)`
-
-**Addition (Explicit Target Unit):**  
-`Quantity(1.0, KILOGRAM).add(Quantity(1000.0, GRAM), GRAM)`  
-→ `Quantity(2000.0, GRAM)`
-
-`Quantity(2.0, KILOGRAM).add(Quantity(4.0, POUND), KILOGRAM)`  
-→ `Quantity(~3.82, KILOGRAM)`
-
-**Category Incompatibility:**  
-`Quantity(1.0, KILOGRAM).equals(Quantity(1.0, FOOT))`  
-→ `false`
-
----
 ## Concepts Used
+
 ### Multiple Measurement Categories
 - Weight operates independently from length  
 - Each category has its own unit enum and quantity class  
@@ -1243,105 +854,10 @@ To:
 - Consistent rounding (two decimal places) ensures predictability  
 
 ---
-## Implementation Steps
 
-### Step 1 – Create WeightUnit Standalone Enum
-- Define constants: `KILOGRAM`, `GRAM`, `POUND`  
-- Assign conversion factors relative to kilogram  
-- Implement `getConversionFactor()`, `convertToBaseUnit()`, `convertFromBaseUnit()`  
 
-### Step 2 – Implement QuantityWeight Class
-- Mirror `QuantityLength` design with `WeightUnit` enum  
-- Validate unit (not null) and value (finite number) in constructor  
-- Implement `equals()`, `convertTo()`, overloaded `add()`, and `toString()`  
-
-### Step 3 – Enforce Category Type Safety
-- `equals()` returns `false` for cross-category comparisons  
-- Document that weight and length are incompatible categories  
-
-### Step 4 – Ensure Conversion Accuracy
-- Verify: `1 kg = 1000 g`, `1 lb ≈ 0.453592 kg`, `1 kg ≈ 2.20462 lb`  
-- Test round-trip conversions within epsilon (`1e-6`)  
-
-### Step 5 – Verify Test Coverage
-- Equality: same unit, cross-unit, incompatible category, null, edge cases  
-- Conversion: all unit pairs, zero, negative, round-trip  
-- Addition: same unit, cross-unit, explicit target unit, commutativity, edge cases  
-
----
-## Test Scenarios
-### Equality Tests
-- Kilogram-to-kilogram same value → `true`  
-- Kilogram-to-gram equivalent value → `true`  
-- Kilogram-to-pound equivalent value → `true` (within epsilon)  
-- Gram-to-pound equivalent value → `true`  
-- Different values in same unit → `false`  
-- Weight vs. length comparison → `false`  
-- Null comparison → `false`  
-- Same reference → `true`  
-- Zero values across units → `true`  
-- Negative values across units → `true`  
-
-### Conversion Tests
-- Kilogram → Gram, Gram → Kilogram  
-- Pound → Kilogram, Kilogram → Pound  
-- Gram → Pound, Pound → Gram  
-- Same unit conversion (no change)  
-- Zero and negative value conversions  
-- Round-trip conversion within epsilon  
-
-### Addition Tests
-- Same unit addition (kg + kg)  
-- Cross-unit addition (kg + g, lb + kg)  
-- Explicit target unit (result in any unit)  
-- Commutativity with target unit  
-- Addition with zero  
-- Addition with negative values  
-- Addition with large magnitude values  
-
-### Edge Cases
-- Null unit → `IllegalArgumentException`  
-- `Double.NaN` value → `IllegalArgumentException`  
-- Infinite value → `IllegalArgumentException`  
-
----
-## Sample Test Cases
-- `testEquality_KilogramToKilogram_SameValue()`  
-- `testEquality_KilogramToKilogram_DifferentValue()`  
-- `testEquality_KilogramToGram_EquivalentValue()`  
-- `testEquality_GramToKilogram_EquivalentValue()`  
-- `testEquality_KilogramToPound_EquivalentValue()`  
-- `testEquality_GramToPound_EquivalentValue()`  
-- `testEquality_WeightVsLength_Incompatible()`  
-- `testEquality_NullComparison()`  
-- `testEquality_SameReference()`  
-- `testEquality_NullUnit()`  
-- `testEquality_TransitiveProperty()`  
-- `testEquality_ZeroValue()`  
-- `testEquality_NegativeWeight()`  
-- `testEquality_LargeWeightValue()`  
-- `testEquality_SmallWeightValue()`  
-- `testConversion_KilogramToGram()`  
-- `testConversion_GramToKilogram()`  
-- `testConversion_PoundToKilogram()`  
-- `testConversion_KilogramToPound()`  
-- `testConversion_GramToPound()`  
-- `testConversion_SameUnit()`  
-- `testConversion_ZeroValue()`  
-- `testConversion_NegativeValue()`  
-- `testConversion_RoundTrip()`  
-- `testAddition_SameUnit_KilogramPlusKilogram()`  
-- `testAddition_CrossUnit_KilogramPlusGram()`  
-- `testAddition_CrossUnit_PoundPlusKilogram()`  
-- `testAddition_ExplicitTargetUnit_Kilogram()`  
-- `testAddition_ExplicitTargetUnit_Gram()`  
-- `testAddition_Commutativity()`  
-- `testAddition_WithZero()`  
-- `testAddition_NegativeValues()`  
-- `testAddition_LargeValues()`  
-
----
 ## Conclusion
+
 UC9 validates that the **generic design patterns established in UC1–UC8 scale seamlessly** to new measurement categories.  
 By introducing weight measurements with no changes to existing length classes, the system demonstrates:
 - Clean **category independence** — weight and length coexist without interference  
@@ -1353,6 +869,7 @@ This marks a significant step toward a **complete, enterprise-grade measurement 
 
 ---
 ## 📅 Date: 18 March 2026
+
 # Quantity Measurement App – UC10: Generic Quantity Class with Unit Interface for Multi-Category Support
 ## Overview
 UC10 refactors the design from UC1–UC9 by introducing a **single generic `Quantity<U>` class** that works across all measurement categories through a common `IMeasurable` interface.  
@@ -1399,13 +916,6 @@ To:
 ---
 ## ⚙️ Conversion Logic
 
-```
-// Convert any unit to base unit
-baseValue = value * unit.getConversionFactor()
-
-// Convert base unit to target unit
-result = baseValue / targetUnit.getConversionFactor()
-```
 
 | Category | Base Unit  | Units Supported                        |
 |----------|------------|----------------------------------------|
@@ -1413,48 +923,7 @@ result = baseValue / targetUnit.getConversionFactor()
 | Weight   | KILOGRAM   | KILOGRAM, GRAM, POUND                  |
 
 ---
-## Example
 
-**Length (UC1–UC8 preserved):**  
-`new Quantity<>(1.0, LengthUnit.FEET).equals(new Quantity<>(12.0, LengthUnit.INCHES))`  
-→ `true`
-
-`new Quantity<>(1.0, LengthUnit.FEET).convertTo(LengthUnit.INCHES)`  
-→ `Quantity(12.0, INCHES)`
-
-`new Quantity<>(1.0, LengthUnit.FEET).add(new Quantity<>(12.0, LengthUnit.INCHES), LengthUnit.FEET)`  
-→ `Quantity(2.0, FEET)`
-
-**Weight (UC9 preserved):**  
-`new Quantity<>(1.0, WeightUnit.KILOGRAM).equals(new Quantity<>(1000.0, WeightUnit.GRAM))`  
-→ `true`
-
-`new Quantity<>(1.0, WeightUnit.KILOGRAM).convertTo(WeightUnit.GRAM)`  
-→ `Quantity(1000.0, GRAM)`
-
-`new Quantity<>(1.0, WeightUnit.KILOGRAM).add(new Quantity<>(1000.0, WeightUnit.GRAM), WeightUnit.KILOGRAM)`  
-→ `Quantity(2.0, KILOGRAM)`
-
-**Cross-Category Prevention:**  
-`new Quantity<>(1.0, LengthUnit.FEET).equals(new Quantity<>(1.0, WeightUnit.KILOGRAM))`  
-→ `false`
-
-`demonstrateEquality(Quantity<LengthUnit>, Quantity<WeightUnit>)`  
-→ Compiler error (type mismatch)
-
----
-## Disadvantages of UC9 Addressed
-
-| UC9 Problem | UC10 Solution |
-|-------------|---------------|
-| Duplicate `QuantityLength` / `QuantityWeight` classes | Single `Quantity<U>` class |
-| Duplicate unit enum structures | `IMeasurable` interface eliminates redundancy |
-| `QuantityMeasurementApp` SRP violation | Generic methods replace category-specific ones |
-| Exponential code growth per new category | Linear growth — new enum only |
-| Inconsistency risk across categories | Single source of truth for all operations |
-| Limited API flexibility | `Quantity<?>` wildcards enable polymorphic methods |
-
----
 ## Concepts Used
 ### Generic Programming
 - Bounded type parameters (`<U extends IMeasurable>`) enforce constraints at compile-time  
@@ -1500,109 +969,8 @@ result = baseValue / targetUnit.getConversionFactor()
 - Immutable and thread-safe by nature  
 
 ---
-## Implementation Steps
 
-### Step 1 – Define IMeasurable Interface
-- Methods: `getConversionFactor()`, `convertToBaseUnit()`, `convertFromBaseUnit()`, `getUnitName()`  
-- Minimal, focused contract — no unnecessary methods  
 
-### Step 2 – Refactor LengthUnit
-- Add `implements IMeasurable`  
-- Implement all interface methods using existing conversion logic  
-- No external API changes — fully backward compatible  
-
-### Step 3 – Refactor WeightUnit
-- Identical structure to refactored `LengthUnit`  
-- Consistent implementation across enums supports polymorphism  
-
-### Step 4 – Create Generic Quantity Class
-- Replace `QuantityLength` and `QuantityWeight` with `Quantity<U extends IMeasurable>`  
-- Implement `equals()`, `convertTo()`, overloaded `add()`, `hashCode()`, `toString()`  
-- `equals()` includes `unit.getClass()` check for cross-category prevention  
-
-### Step 5 – Simplify QuantityMeasurementApp
-- Replace category-specific methods with single generic `demonstrateEquality()`, `demonstrateConversion()`, `demonstrateAddition()`  
-- Reduce class to orchestration responsibilities only  
-
-### Step 6 – Update Test Classes
-- Rename to `QuantityTest` (replaces `QuantityLengthTest` and `QuantityWeightTest`)  
-- Use parameterized tests or separate test classes per category  
-- All test logic remains identical — only type parameters change  
-
-### Step 7 – Verify Backward Compatibility
-- Run all UC1–UC9 test cases unchanged  
-- Confirm behavior is identical to previous implementation  
-
----
-## Test Scenarios
-### IMeasurable Interface Tests
-- `LengthUnit` correctly implements all interface methods  
-- `WeightUnit` correctly implements all interface methods  
-- Consistent method behavior across both enums  
-
-### Generic Quantity — Length Operations
-- Equality, conversion, and addition via `Quantity<LengthUnit>`  
-- Identical behavior to original `QuantityLength`  
-
-### Generic Quantity — Weight Operations
-- Equality, conversion, and addition via `Quantity<WeightUnit>`  
-- Identical behavior to original `QuantityWeight`  
-
-### Cross-Category Prevention
-- `equals()` returns `false` when categories differ  
-- Compiler rejects type mismatches at compile-time  
-
-### Constructor Validation
-- Null unit → `IllegalArgumentException`  
-- `Double.NaN` value → `IllegalArgumentException`  
-- Infinite value → `IllegalArgumentException`  
-
-### Simplified QuantityMeasurementApp
-- `demonstrateEquality()` handles both length and weight  
-- `demonstrateConversion()` handles both length and weight  
-- `demonstrateAddition()` handles both length and weight  
-
-### Scalability
-- New `VolumeUnit` enum integrates with `Quantity<VolumeUnit>` without any other changes  
-- No modifications to `Quantity<U>` or `QuantityMeasurementApp` required  
-
-### Backward Compatibility
-- All UC1–UC9 test cases pass without modification  
-
----
-## Sample Test Cases
-- `testIMeasurableInterface_LengthUnitImplementation()`  
-- `testIMeasurableInterface_WeightUnitImplementation()`  
-- `testIMeasurableInterface_ConsistentBehavior()`  
-- `testGenericQuantity_LengthOperations_Equality()`  
-- `testGenericQuantity_WeightOperations_Equality()`  
-- `testGenericQuantity_LengthOperations_Conversion()`  
-- `testGenericQuantity_WeightOperations_Conversion()`  
-- `testGenericQuantity_LengthOperations_Addition()`  
-- `testGenericQuantity_WeightOperations_Addition()`  
-- `testCrossCategoryPrevention_LengthVsWeight()`  
-- `testCrossCategoryPrevention_CompilerTypeSafety()`  
-- `testGenericQuantity_ConstructorValidation_NullUnit()`  
-- `testGenericQuantity_ConstructorValidation_InvalidValue()`  
-- `testGenericQuantity_Conversion_AllUnitCombinations()`  
-- `testGenericQuantity_Addition_AllUnitCombinations()`  
-- `testBackwardCompatibility_AllUC1Through9Tests()`  
-- `testQuantityMeasurementApp_SimplifiedDemonstration_Equality()`  
-- `testQuantityMeasurementApp_SimplifiedDemonstration_Conversion()`  
-- `testQuantityMeasurementApp_SimplifiedDemonstration_Addition()`  
-- `testTypeWildcard_FlexibleSignatures()`  
-- `testScalability_NewUnitEnumIntegration()`  
-- `testScalability_MultipleNewCategories()`  
-- `testGenericBoundedTypeParameter_Enforcement()`  
-- `testHashCode_GenericQuantity_Consistency()`  
-- `testEquals_GenericQuantity_ContractPreservation()`  
-- `testEnumAsUnitCarrier_BehaviorEncapsulation()`  
-- `testTypeErasure_RuntimeSafety()`  
-- `testCompositionOverInheritance_Flexibility()`  
-- `testImmutability_GenericQuantity()`  
-- `testArchitecturalReadiness_MultipleNewCategories()`  
-
----
 ## Conclusion
 UC10 completes the architectural evolution of the Quantity Measurement Application by replacing category-specific duplication with a **single, type-safe generic design**.  
 By introducing the `IMeasurable` interface and the `Quantity<U>` class, the system achieves:
@@ -1662,14 +1030,6 @@ To:
 ---
 ## ⚙️ Conversion Logic
 
-```
-// Convert any unit to base unit (litre)
-baseValue = value * unit.getConversionFactor()
-
-// Convert base unit (litre) to target unit
-result = baseValue / targetUnit.getConversionFactor()
-```
-
 | Unit        | Conversion Factor (to litres) |
 |-------------|-------------------------------|
 | LITRE       | 1.0                           |
@@ -1677,50 +1037,7 @@ result = baseValue / targetUnit.getConversionFactor()
 | GALLON      | 3.78541                       |
 
 ---
-## Example
 
-**Equality:**  
-`new Quantity<>(1.0, LITRE).equals(new Quantity<>(1000.0, MILLILITRE))`  
-→ `true`
-
-`new Quantity<>(1.0, LITRE).equals(new Quantity<>(~0.264172, GALLON))`  
-→ `true` (within epsilon)
-
-`new Quantity<>(3.78541, LITRE).equals(new Quantity<>(1.0, GALLON))`  
-→ `true` (within epsilon)
-
-**Conversion:**  
-`new Quantity<>(1.0, LITRE).convertTo(MILLILITRE)`  
-→ `Quantity(1000.0, MILLILITRE)`
-
-`new Quantity<>(2.0, GALLON).convertTo(LITRE)`  
-→ `Quantity(~7.57082, LITRE)`
-
-`new Quantity<>(500.0, MILLILITRE).convertTo(GALLON)`  
-→ `Quantity(~0.132086, GALLON)`
-
-**Addition (Implicit Target Unit):**  
-`new Quantity<>(1.0, LITRE).add(new Quantity<>(1000.0, MILLILITRE))`  
-→ `Quantity(2.0, LITRE)`
-
-`new Quantity<>(2.0, GALLON).add(new Quantity<>(3.78541, LITRE))`  
-→ `Quantity(3.0, GALLON)`
-
-**Addition (Explicit Target Unit):**  
-`new Quantity<>(1.0, LITRE).add(new Quantity<>(1000.0, MILLILITRE), MILLILITRE)`  
-→ `Quantity(2000.0, MILLILITRE)`
-
-`new Quantity<>(500.0, MILLILITRE).add(new Quantity<>(1.0, LITRE), GALLON)`  
-→ `Quantity(~0.396258, GALLON)`
-
-**Category Incompatibility:**  
-`new Quantity<>(1.0, LITRE).equals(new Quantity<>(1.0, FOOT))`  
-→ `false`
-
-`new Quantity<>(1.0, LITRE).equals(new Quantity<>(1.0, KILOGRAM))`  
-→ `false`
-
----
 ## Concepts Used
 ### Scalability of Generic Design
 - Adding a third category requires **only a new enum** implementing `IMeasurable`  
@@ -1760,141 +1077,8 @@ result = baseValue / targetUnit.getConversionFactor()
 - Generic demonstration methods in `QuantityMeasurementApp` work automatically  
 
 ---
-## Implementation Steps
 
-### Step 1 – Create VolumeUnit Enum
-- Define constants: `LITRE`, `MILLILITRE`, `GALLON`  
-- Assign conversion factors relative to litre  
-- Implement `getConversionFactor()`, `convertToBaseUnit()`, `convertFromBaseUnit()`, `getUnitName()`  
 
-### Step 2 – Verify Conversion Factor Accuracy
-- `LITRE`: 1.0 (base unit)  
-- `MILLILITRE`: 0.001 (1 mL = 0.001 L)  
-- `GALLON`: 3.78541 (1 US gallon ≈ 3.78541 L)  
-
-### Step 3 – Create Quantity Instances
-- Use existing `Quantity<U>` class: `new Quantity<>(1.0, VolumeUnit.LITRE)`  
-- No new class creation required  
-
-### Step 4 – Test Equality Comparisons
-- Verify `equals()` works for same-unit, cross-unit, and cross-category comparisons  
-
-### Step 5 – Test Unit Conversions
-- Verify `convertTo()` works for all volume unit pairs  
-
-### Step 6 – Test Addition Operations
-- Verify `add()` works with implicit and explicit target unit specification  
-
-### Step 7 – Test Cross-Category Prevention
-- Confirm volume cannot be compared with length or weight measurements  
-
-### Step 8 – Comprehensive Test Coverage
-- Cover all equality, conversion, addition, edge case, and precision scenarios  
-
-### Step 9 – Integration Testing
-- Verify existing generic `demonstrateEquality()`, `demonstrateConversion()`, `demonstrateAddition()` work with volume without modification  
-
-### Step 10 – Backward Compatibility Validation
-- Run all UC1–UC10 test cases unchanged to confirm no regressions  
-
----
-## Test Scenarios
-### Equality Tests
-- Litre-to-litre same value → `true`  
-- Litre-to-millilitre equivalent value → `true`  
-- Litre-to-gallon equivalent value → `true` (within epsilon)  
-- Gallon-to-litre equivalent value → `true` (symmetric)  
-- Millilitre-to-gallon equivalent value → `true`  
-- Different values in same unit → `false`  
-- Volume vs. length → `false`  
-- Volume vs. weight → `false`  
-- Null comparison → `false`  
-- Same reference → `true`  
-- Zero values across units → `true`  
-- Negative values across units → `true`  
-
-### Conversion Tests
-- Litre → Millilitre, Millilitre → Litre  
-- Gallon → Litre, Litre → Gallon  
-- Millilitre → Gallon, Gallon → Millilitre  
-- Same unit conversion (no change)  
-- Zero and negative value conversions  
-- Round-trip conversion within epsilon  
-
-### Addition Tests
-- Same unit addition (L + L, mL + mL)  
-- Cross-unit addition (L + mL, mL + L, gallon + L)  
-- Explicit target unit (result in any volume unit)  
-- Commutativity with target unit  
-- Addition with zero (identity element)  
-- Addition with negative values  
-- Addition with large and small magnitude values  
-
-### VolumeUnit Enum Tests
-- `LITRE.getConversionFactor()` → `1.0`  
-- `MILLILITRE.getConversionFactor()` → `0.001`  
-- `GALLON.getConversionFactor()` → `3.78541`  
-- `convertToBaseUnit()` and `convertFromBaseUnit()` for all constants  
-
-### Edge Cases
-- Null unit → `IllegalArgumentException`  
-- `Double.NaN` value → `IllegalArgumentException`  
-- Infinite value → `IllegalArgumentException`  
-
----
-## Sample Test Cases
-- `testEquality_LitreToLitre_SameValue()`  
-- `testEquality_LitreToLitre_DifferentValue()`  
-- `testEquality_LitreToMillilitre_EquivalentValue()`  
-- `testEquality_MillilitreToLitre_EquivalentValue()`  
-- `testEquality_LitreToGallon_EquivalentValue()`  
-- `testEquality_GallonToLitre_EquivalentValue()`  
-- `testEquality_VolumeVsLength_Incompatible()`  
-- `testEquality_VolumeVsWeight_Incompatible()`  
-- `testEquality_NullComparison()`  
-- `testEquality_SameReference()`  
-- `testEquality_NullUnit()`  
-- `testEquality_TransitiveProperty()`  
-- `testEquality_ZeroValue()`  
-- `testEquality_NegativeVolume()`  
-- `testEquality_LargeVolumeValue()`  
-- `testEquality_SmallVolumeValue()`  
-- `testConversion_LitreToMillilitre()`  
-- `testConversion_MillilitreToLitre()`  
-- `testConversion_GallonToLitre()`  
-- `testConversion_LitreToGallon()`  
-- `testConversion_MillilitreToGallon()`  
-- `testConversion_SameUnit()`  
-- `testConversion_ZeroValue()`  
-- `testConversion_NegativeValue()`  
-- `testConversion_RoundTrip()`  
-- `testAddition_SameUnit_LitrePlusLitre()`  
-- `testAddition_SameUnit_MillilitrePlusMillilitre()`  
-- `testAddition_CrossUnit_LitrePlusMillilitre()`  
-- `testAddition_CrossUnit_MillilitrePlusLitre()`  
-- `testAddition_CrossUnit_GallonPlusLitre()`  
-- `testAddition_ExplicitTargetUnit_Litre()`  
-- `testAddition_ExplicitTargetUnit_Millilitre()`  
-- `testAddition_ExplicitTargetUnit_Gallon()`  
-- `testAddition_Commutativity()`  
-- `testAddition_WithZero()`  
-- `testAddition_NegativeValues()`  
-- `testAddition_LargeValues()`  
-- `testAddition_SmallValues()`  
-- `testVolumeUnitEnum_LitreConstant()`  
-- `testVolumeUnitEnum_MillilitreConstant()`  
-- `testVolumeUnitEnum_GallonConstant()`  
-- `testConvertToBaseUnit_LitreToLitre()`  
-- `testConvertToBaseUnit_MillilitreToLitre()`  
-- `testConvertToBaseUnit_GallonToLitre()`  
-- `testConvertFromBaseUnit_LitreToLitre()`  
-- `testConvertFromBaseUnit_LitreToMillilitre()`  
-- `testConvertFromBaseUnit_LitreToGallon()`  
-- `testBackwardCompatibility_AllUC1Through10Tests()`  
-- `testGenericQuantity_VolumeOperations_Consistency()`  
-- `testScalability_VolumeIntegration()`  
-
----
 ## Conclusion
 UC11 delivers the ultimate proof of the generic architecture established in UC10 — a **complete new measurement category integrated with a single enum file** and zero changes to the existing codebase.  
 By introducing volume measurements through only `VolumeUnit`, the system confirms:
@@ -1962,17 +1146,6 @@ To:
 ---
 ## ⚙️ Arithmetic Logic
 
-```
-// Subtraction
-baseResult = (this.value * this.unit.getConversionFactor())
-           - (other.value * other.unit.getConversionFactor())
-finalResult = baseResult / targetUnit.getConversionFactor()
-
-// Division (dimensionless)
-result = (this.value * this.unit.getConversionFactor())
-       / (other.value * other.unit.getConversionFactor())
-```
-
 | Operation   | Returns          | Commutative | Target Unit Support |
 |-------------|------------------|-------------|---------------------|
 | `add()`     | `Quantity<U>`    | Yes         | Implicit + Explicit |
@@ -1980,38 +1153,1397 @@ result = (this.value * this.unit.getConversionFactor())
 | `divide()`  | `double` scalar  | No          | N/A (dimensionless) |
 
 ---
-## Example
 
-**Subtraction (Implicit Target Unit):**  
-`new Quantity<>(10.0, FEET).subtract(new Quantity<>(6.0, INCHES))`  
-→ `Quantity(9.5, FEET)`
+## Concepts Used
+### Comprehensive Arithmetic Operations
+- Quantity system evolves from comparison/conversion to full arithmetic support  
+- Multiple operations share common validation and conversion patterns  
+- Design accommodates operation diversity without restructuring  
 
-`new Quantity<>(10.0, KILOGRAM).subtract(new Quantity<>(5000.0, GRAM))`  
-→ `Quantity(5.0, KILOGRAM)`
+### Non-Commutative Operations
+- Subtraction and division are order-dependent — swapping operands changes the result  
+- `A.subtract(B) ≠ B.subtract(A)` and `A.divide(B) ≠ B.divide(A)`  
+- Testing must verify non-commutativity, unlike commutative addition  
 
-`new Quantity<>(5.0, LITRE).subtract(new Quantity<>(500.0, MILLILITRE))`  
-→ `Quantity(4.5, LITRE)`
+### Division by Zero Handling
+- Fail-fast principle: throw `ArithmeticException` rather than return `Infinity` or `NaN`  
+- Validation prevents silent logic errors in downstream code  
 
-**Subtraction (Explicit Target Unit):**  
-`new Quantity<>(10.0, FEET).subtract(new Quantity<>(6.0, INCHES), INCHES)`  
-→ `Quantity(114.0, INCHES)`
+### Immutability in Arithmetic
+- All operations return new instances; original quantities remain unchanged  
+- Thread-safe and supports functional composition  
+- Consistent with all previous UC operations  
 
-`new Quantity<>(5.0, LITRE).subtract(new Quantity<>(2.0, LITRE), MILLILITRE)`  
-→ `Quantity(3000.0, MILLILITRE)`
+### Target Unit Specification Pattern
+- Consistent overloading: implicit (first operand's unit) and explicit target unit  
+- Applies to subtraction just as it does to addition  
+- Division is dimensionless — no target unit concept applies  
 
-**Subtraction (Negative Result):**  
-`new Quantity<>(5.0, FEET).subtract(new Quantity<>(10.0, FEET))`  
-→ `Quantity(-5.0, FEET)`
+### Cross-Category Type Safety
+- `unit.getClass()` check prevents subtraction and division across categories  
+- Compile-time and runtime safety layers consistent with UC10+  
 
-**Subtraction (Zero Result):**  
-`new Quantity<>(10.0, FEET).subtract(new Quantity<>(120.0, INCHES))`  
-→ `Quantity(0.0, FEET)`
+### Private Helper Methods for Code Reuse
+- Shared conversion and validation logic reduces duplication across operations  
+- Adding future operations (modulo, power) follows the same helper structure  
 
-**Division:**  
-`new Quantity<>(10.0, FEET).divide(new Quantity<>(2.0, FEET))`  
-→ `5.0`
+### Validation Consistency
+- All operations: null check, category check, finiteness check, zero check (division only)  
+- Centralized validation patterns prevent missed edge cases  
 
-`new Quantity<>(24.0, INCHES).divide(new Quantity<>(2.0, FEET))`  
-→ `1.0`
+### Precision Handling
+- Subtraction rounds to two decimal places (consistent with `add()`)  
+- Division returns raw `double` — no arbitrary rounding for dimensionless scalars  
 
-`new Quantity<>(5.0, LITRE).divide(new Quantity<>(10.
+---
+
+## Conclusion
+UC12 completes the arithmetic foundation of the Quantity Measurement Application by adding **subtraction and division** alongside the existing addition operation.  
+Both operations seamlessly integrate into the generic `Quantity<U>` design — following the same validation, conversion, immutability, and type-safety patterns established across UC1–UC11.
+
+The system now supports:
+- **Full arithmetic** — add, subtract, divide across any supported measurement category  
+- **Non-commutative awareness** — design and tests account for order-dependent operations  
+- **Robust error handling** — null safety, cross-category prevention, and division-by-zero protection  
+- **Consistent API design** — implicit and explicit target unit overloading mirrors the `add()` pattern  
+
+With UC12, the Quantity Measurement Application is a **fully featured, production-grade measurement framework** — extensible, type-safe, arithmetically complete, and built on proven software engineering principles.
+
+---
+## 📅 Date: 21 March 2026
+
+# Quantity Measurement App – UC13: Centralized Arithmetic Logic to Enforce DRY in Quantity Operations
+## Overview
+UC13 refactors the arithmetic operations (addition, subtraction, division) implemented in UC12 to **eliminate code duplication** and enforce the **DRY (Don't Repeat Yourself) principle**.  
+Instead of repeating unit conversion, base-unit normalization, and validation logic across each arithmetic method, a centralized private helper extracts all common logic into a single reusable implementation.
+
+The public API remains completely unchanged — all UC12 behaviors are preserved while the internal structure is optimized for clarity, consistency, and scalability.
+
+---
+## Objective
+To:
+- Create a private `ArithmeticOperation` enum to dispatch operations cleanly  
+- Extract a centralized `validateArithmeticOperands()` helper for shared validation  
+- Extract a centralized `performBaseArithmetic()` helper for shared conversion and computation  
+- Refactor `add()`, `subtract()`, and `divide()` to delegate to these helpers  
+- Eliminate all duplicated validation, conversion, and error-handling code  
+- Maintain full backward compatibility with all UC12 test cases  
+
+---
+## Objective
+To:
+- Create a private `ArithmeticOperation` enum to dispatch operations cleanly  
+- Extract a centralized `validateArithmeticOperands()` helper for shared validation  
+- Extract a centralized `performBaseArithmetic()` helper for shared conversion and computation  
+- Refactor `add()`, `subtract()`, and `divide()` to delegate to these helpers  
+- Eliminate all duplicated validation, conversion, and error-handling code  
+- Maintain full backward compatibility with all UC12 test cases  
+
+---
+## Features
+- `ArithmeticOperation` enum with `ADD`, `SUBTRACT`, `DIVIDE` constants (abstract method or lambda approach)  
+- `validateArithmeticOperands()` — single source of truth for null, category, and finiteness checks  
+- `performBaseArithmetic()` — single source of truth for base-unit conversion and computation  
+- All public method signatures unchanged — zero impact on callers  
+- Consistent error messages and exception types across all operations  
+- Scalable pattern: new operations (multiply, modulo) require only a new enum constant  
+
+---
+## Project Structure
+- `Quantity<U>` – Refactored internally; public API unchanged  
+  - `ArithmeticOperation` (private enum) – dispatches `ADD`, `SUBTRACT`, `DIVIDE`  
+  - `validateArithmeticOperands()` (private) – centralized validation  
+  - `performBaseArithmetic()` (private) – centralized conversion and computation  
+- `IMeasurable`, `LengthUnit`, `WeightUnit`, `VolumeUnit` – Unchanged  
+- `QuantityMeasurementApp` – Unchanged; no public API changes  
+
+---
+## Working Flow
+
+### Before UC13 (UC12 Pattern — Duplicated)
+```
+add()       → null check → category check → finite check → convert → compute → convert back
+subtract()  → null check → category check → finite check → convert → compute → convert back
+divide()    → null check → category check → finite check → convert → compute
+```
+
+### After UC13 (Centralized Pattern)
+```
+add()       → validateArithmeticOperands() → performBaseArithmetic(ADD)    → convert result
+subtract()  → validateArithmeticOperands() → performBaseArithmetic(SUBTRACT) → convert result
+divide()    → validateArithmeticOperands() → performBaseArithmetic(DIVIDE) → return scalar
+```
+
+### Internal Flow Example
+```
+q1.subtract(q2, FEET)
+  ↓
+validateArithmeticOperands(q2, FEET, true)
+  ↓
+performBaseArithmetic(q2, SUBTRACT)
+  ↓
+SUBTRACT.compute(q1.baseValue, q2.baseValue)
+  ↓
+Convert result to FEET
+  ↓
+Return new Quantity<>(..., FEET)
+```
+---
+
+## Conclusion
+UC13 applies the same architectural discipline to **internal implementation** that UC10 applied to the class hierarchy — eliminating duplication and establishing a single source of truth.  
+By introducing the `ArithmeticOperation` enum and two private helper methods, the system achieves:
+- **Zero duplication** — validation and conversion logic written once, shared by all operations  
+- **Consistent behavior** — all operations fail identically for invalid inputs  
+- **Effortless extensibility** — adding multiplication or modulo requires one enum constant  
+- **Improved readability** — public methods are short and expressive; boilerplate is abstracted away  
+- **Full backward compatibility** — all UC12 tests pass without a single modification  
+
+UC13 demonstrates that **great architecture is not just about external design** — internal code quality matters equally, and the DRY principle is as important inside a class as it is across the system.
+
+---
+## 📅 Date: 23 March 2026
+
+# Quantity Measurement App – UC14: Temperature Measurement with Selective Arithmetic Support and IMeasurable Refactoring
+## Overview
+UC14 extends the Quantity Measurement Application to support **temperature measurements** alongside length, weight, and volume — while simultaneously revealing and resolving a fundamental limitation in the current `IMeasurable` interface design.
+
+Unlike linear measurement categories (length, weight, volume), temperature conversions are **non-linear** and arithmetic on absolute temperature values is **physically meaningless** (100°C + 50°C ≠ 150°C in any practical sense). This means temperature can only support equality comparison and unit conversion — not addition, subtraction, or division.
+
+To accommodate this, UC14 refactors `IMeasurable` to introduce **optional operation support via default methods** and a `SupportsArithmetic` functional interface, allowing temperature to coexist cleanly with other categories while the existing system remains completely unchanged.
+
+---
+## Objective
+To:
+- Refactor `IMeasurable` to support optional arithmetic through default methods and a `SupportsArithmetic` functional interface  
+- Create a `TemperatureUnit` enum implementing `IMeasurable` with non-linear conversion logic  
+- Enhance `Quantity<U>` to check operation support before executing arithmetic  
+- Ensure `TemperatureUnit` throws `UnsupportedOperationException` for unsupported operations  
+- Maintain full backward compatibility with all UC1–UC13 functionality  
+
+---
+## Features
+- Temperature equality comparison across Celsius and Fahrenheit  
+- Non-linear temperature unit conversion (°C ↔ °F) using lambda expressions  
+- `UnsupportedOperationException` thrown for add, subtract, and divide on temperature  
+- `SupportsArithmetic` functional interface flags whether a unit supports arithmetic  
+- `validateOperationSupport()` default method overridden in `TemperatureUnit`  
+- All existing categories (length, weight, volume) inherit default `true` — zero changes required  
+- Cross-category type safety maintained (temperature ≠ length ≠ weight ≠ volume)  
+
+---
+## Project Structure
+- `IMeasurable` – Refactored with `SupportsArithmetic` functional interface and default methods  
+- `TemperatureUnit` – New enum implementing `IMeasurable` with lambda-based non-linear conversions  
+- `Quantity<U>` – Enhanced to call `validateOperationSupport()` before arithmetic  
+- `LengthUnit`, `WeightUnit`, `VolumeUnit` – Unchanged; inherit default arithmetic support  
+- `QuantityMeasurementApp` – Main method extended with temperature demonstrations  
+
+---
+## Working Flow
+
+### Equality
+1. Two `Quantity<TemperatureUnit>` objects provided  
+2. Both values converted to **Celsius (base unit)** using non-linear formulas  
+3. Compared using `Double.compare()` within epsilon tolerance  
+4. Returns `true` if equivalent, `false` otherwise  
+
+### Conversion
+1. `convertTo(targetUnit)` called on a `Quantity<TemperatureUnit>`  
+2. Special handling: if `TemperatureUnit`, invoke non-linear conversion formula directly  
+3. New immutable `Quantity<TemperatureUnit>` returned  
+
+### Arithmetic (Unsupported)
+1. `add()`, `subtract()`, or `divide()` called on `Quantity<TemperatureUnit>`  
+2. `this.unit.validateOperationSupport(operation.name())` called first  
+3. `TemperatureUnit` overrides this method to throw `UnsupportedOperationException`  
+4. Clear error message returned explaining why the operation is invalid  
+
+---
+
+## ⚙️ Temperature Conversion Formulas
+
+```
+Celsius → Fahrenheit:   °F = (°C × 9/5) + 32
+Fahrenheit → Celsius:   °C = (°F − 32) × 5/9
+```
+
+| Unit        | Base Unit | Conversion Formula (to Celsius)     |
+|-------------|-----------|-------------------------------------|
+| CELSIUS     | Celsius   | Identity — no conversion needed     |
+| FAHRENHEIT  | Celsius   | `(°F − 32) × 5/9`                   |
+
+---
+## Disadvantages of UC13 Addressed
+
+| UC13 Limitation | UC14 Solution |
+|-----------------|---------------|
+| `IMeasurable` assumes all categories support arithmetic | `SupportsArithmetic` functional interface flags support per unit |
+| `Quantity` has no mechanism to block unsupported operations | `validateOperationSupport()` checked before any arithmetic |
+| Interface forces temperature to implement dummy arithmetic | Default no-op with override in `TemperatureUnit` |
+| No compile-time or early runtime warning for invalid ops | `UnsupportedOperationException` thrown with clear message |
+| ISP violated — single interface mixes conversion and arithmetic | Default methods segregate optional operations cleanly |
+
+---
+## Concepts Used
+### Interface Segregation Principle (ISP)
+- Refactored `IMeasurable` separates mandatory conversion from optional arithmetic  
+- Categories implement only what they genuinely support  
+- Forcing temperature to implement dummy arithmetic violates ISP  
+
+### Functional Interface
+- `SupportsArithmetic` has exactly one abstract method: `boolean isSupported()`  
+- Used with lambda `() -> false` in `TemperatureUnit` to flag no arithmetic support  
+- Enables concise, expressive capability declaration  
+
+### Lambda Expressions
+- Temperature conversion formulas expressed as `Function<Double, Double>` lambdas  
+- Each `TemperatureUnit` constant carries its own conversion lambda  
+- `CELSIUS_TO_CELSIUS = (celsius) -> celsius` — identity function  
+- `FAHRENHEIT_TO_CELSIUS = (f) -> (f - 32) * 5.0 / 9.0` — formula-based  
+
+### Default Methods in Interfaces
+- Provide default implementations that existing units inherit without code changes  
+- `TemperatureUnit` overrides `validateOperationSupport()` to block arithmetic  
+- Enables non-breaking interface evolution  
+
+### Non-Linear Conversions
+- Temperature conversions use addition/subtraction formulas, not simple multiplication  
+- Requires special handling in `Quantity.convertTo()` for `TemperatureUnit`  
+- Fundamentally different from length, weight, and volume (which are linear)  
+
+### Absolute vs. Relative Temperatures
+- Absolute temperature: 100°C is a specific point on a scale  
+- Arithmetic on absolute temperatures is physically meaningless  
+- Subtraction of two temperatures gives a *difference* — which is a different concept  
+
+### Capability-Based Design
+- Query units about supported operations before attempting them  
+- Graceful degradation with clear, informative error messages  
+- More user-friendly than silent failures or cryptic exceptions  
+
+### Exception Semantics
+- `UnsupportedOperationException` — operation not available for this category  
+- `IllegalArgumentException` — invalid argument provided  
+- `ArithmeticException` — mathematical error (e.g., division by zero)  
+- Each exception type communicates a distinct kind of failure  
+
+### Backward Compatibility Through Defaults
+- Existing units (`LengthUnit`, `WeightUnit`, `VolumeUnit`) require zero changes  
+- Default `() -> true` lambda and no-op `validateOperationSupport()` preserve current behavior  
+- Refactoring is purely additive and non-breaking  
+
+---
+## Implementation Steps
+
+### Step 1 – Refactor IMeasurable Interface
+- Add `SupportsArithmetic` `@FunctionalInterface` with `boolean isSupported()`  
+- Add default `SupportsArithmetic supportsArithmetic = () -> true`  
+- Add `default boolean supportsArithmetic()` returning `supportsArithmetic.isSupported()`  
+- Add `default void validateOperationSupport(String operation)` as no-op  
+
+### Step 2 – No Changes to LengthUnit, WeightUnit, VolumeUnit
+- All three inherit default `supportsArithmetic = () -> true`  
+- `validateOperationSupport()` default no-op applies — all operations allowed  
+
+### Step 3 – Create TemperatureUnit Enum
+- Define `CELSIUS`, `FAHRENHEIT` constants  
+- Assign lambda conversion functions per constant  
+- Set `SupportsArithmetic supportsArithmetic = () -> false`  
+- Override `validateOperationSupport()` to throw `UnsupportedOperationException`  
+- Implement `convertToBaseUnit()` and `convertFromBaseUnit()` using formula lambdas  
+
+### Step 4 – Update Quantity Class
+- Equality: works as-is via `convertToBaseUnit()`  
+- Conversion: check if unit is `TemperatureUnit`; if so, invoke non-linear formula directly  
+- Arithmetic: call `this.unit.validateOperationSupport(operation.name())` before processing  
+
+### Step 5 – Update QuantityMeasurementApp
+- No changes to existing demonstration methods  
+- Add temperature equality, conversion, and unsupported operation demonstrations in `main()`  
+
+### Step 6 – Comprehensive Test Coverage
+- Equality across all temperature unit pairs  
+- Conversion accuracy with epsilon tolerance  
+- Unsupported operation exception handling  
+- Cross-category prevention  
+- Edge cases: absolute zero, -40° equal point, large values  
+
+---
+
+## Conclusion
+UC14 is the most architecturally significant use case since UC10 — it reveals a real-world limitation of the existing design and resolves it through principled refactoring rather than workarounds.
+
+By introducing the `SupportsArithmetic` functional interface and `validateOperationSupport()` default method, the system achieves:
+- **Interface Segregation** — categories implement only what they genuinely support  
+- **Fail-fast safety** — unsupported operations rejected immediately with clear messages  
+- **Non-breaking evolution** — existing units require zero changes  
+- **Lambda-powered conversions** — non-linear temperature formulas expressed cleanly  
+- **Full backward compatibility** — all UC1–UC13 tests pass without modification  
+
+UC14 demonstrates that **great systems evolve gracefully** — accommodating new, structurally different requirements without breaking existing contracts or duplicating defensive code throughout the codebase.
+
+---
+
+## 📅 Date: 25 March 2026
+
+# UC15: N-Tier Architecture Refactoring
+
+## Overview
+
+UC15 refactors the monolithic Quantity Measurement Application into a professional **N-Tier architecture** by separating concerns into distinct layers: Controller Layer, Service Layer, and Entity/Model Layer. This architectural shift transforms the standalone application from a single-responsibility class into a scalable, maintainable system that adheres to SOLID principles and industry best practices.
+
+The refactoring redistributes responsibilities as follows:
+
+- **Application Layer** (`QuantityMeasurementApp.Console`)
+  - Entry point of the application
+  - Handles user interaction via Menu
+  - Invokes Controller methods
+
+- **Controller Layer** (`Controller`)
+  - Acts as mediator between UI and business logic
+  - Accepts user input and converts it into DTOs
+  - Calls Service layer methods
+
+- **Business Layer** (`QuantityMeasurementAppBusinessLayer`)
+  - Contains core business rules
+  - Validates inputs and measurement types
+  - Delegates persistence to Repository Layer
+
+- **Repository Layer** (`QuantityMeasurementAppRepositoryLayer`)
+  - Handles data storage and retrieval
+  - Implements caching mechanism (Singleton)
+  - Abstracted via interface for flexibility
+
+- **Model Layer** (`QuantityMeasurementAppModelLayer`)
+  - Defines DTOs, Enums, and Entities
+  - Shared across all layers
+---
+
+## Objective
+
+- Refactor monolithic system into layered N-Tier architecture
+- Separate concerns into Console, Controller, Business, Repository, and Model layers
+- Define DTO and Entity classes:
+  - `QuantityDTO`
+  - `QuantityMeasurementEntity`
+- Implement Repository pattern:
+  - `IQuantityMeasurementRepository`
+  - `QuantityMeasurementCacheRepository`
+- Implement Service pattern:
+  - `IQuantityMeasurementService`
+  - `QuantityMeasurementService`
+- Implement Controller layer:
+  - `QuantityMeasurementController`
+- Apply design patterns:
+  - Singleton (Repository)
+  - Dependency Injection
+  - Facade (Controller)
+- Maintain full compatibility with UC1–UC14
+---
+
+## Features
+
+- Clean N-Tier architecture:
+  Console → Controller → Business → Repository → Model
+
+- DTO-based communication (`QuantityDTO`) across layers
+
+- Centralized exception handling:
+  `QuantityMeasurementException`
+
+- In-memory cache repository:
+  `QuantityMeasurementCacheRepository`
+
+- Loose coupling via interfaces:
+  - `IQuantityMeasurementService`
+  - `IQuantityMeasurementRepository`
+
+- Dependency Injection via constructor
+
+- Support for multiple measurement types:
+  Length, Weight, Volume, Temperature
+
+- All UC1–UC14 features preserved:
+  - Equality
+  - Unit Conversion
+  - Addition / Subtraction / Division
+  
+---
+
+## Architecture Overview
+
+```
+
+QuantityMeasurementApp.Console (Application Layer)
+        │
+        ▼
+Controller Layer (QuantityMeasurementController)
+        │
+        ▼
+Business Layer (QuantityMeasurementService)
+        │
+        ▼
+Repository Layer (Cache Repository)
+        │
+        ▼
+Model Layer (DTOs, Enums, Entities)
+```
+
+---
+
+## Disadvantages of UC14 Addressed
+
+| UC14 Limitation | UC15 Solution |
+|-----------------|---------------|
+| Mixed responsibilities in a single class | Clear 4-tier architecture with single-responsibility layers |
+| Business logic tightly coupled to presentation | Service layer has zero presentation concerns |
+| No defined data contract between operations | `QuantityDTO` as standardized input/output contract |
+| Testing business logic requires UI mocking | Service layer testable independently with no UI dependency |
+| No reusability across different interfaces | Service layer reusable from CLI, REST API, GUI |
+| Exception handling scattered throughout | Centralized in `QuantityMeasurementException` |
+| No extension points for frameworks | DI-ready; can integrate with ASP.NET Core DI or Autofac without changes |
+
+---
+
+## Concepts Used
+
+### N-Tier Architecture
+- Application, Controller, Business, Repository, and Model layers with clear boundaries
+- Each layer communicates only with the layer directly below it
+- Enables independent development, testing, and scalability
+
+Project Mapping:
+- Application Layer → QuantityMeasurementApp.Console
+- Controller Layer → Controller/QuantityMeasurementController.cs
+- Business Layer → QuantityMeasurementAppBusinessLayer/Service
+- Repository Layer → QuantityMeasurementAppRepositoryLayer/Cache
+- Model Layer → QuantityMeasurementAppModelLayer (DTOs, Enums, Models)
+
+---
+
+### POCO and DTO Classes
+- POCO: Plain Old C# Object — only properties, constructors, getters/setters
+- DTO: Data Transfer Object — used to transfer data between layers
+
+Used in project:
+- QuantityDTO → used between Controller and Service
+- QuantityMeasurementEntity → used for persistence/history in Repository
+- Enums → LengthUnit, WeightUnit, VolumeUnit, TemperatureUnit
+
+---
+
+### Repository Pattern
+- IQuantityMeasurementRepository abstracts persistence
+- QuantityMeasurementCacheRepository provides in-memory storage
+
+Benefits:
+- Decouples business logic from storage
+- Easy to replace with database implementation
+
+---
+
+### Singleton Design Pattern
+- QuantityMeasurementCacheRepository is a Singleton
+- Ensures one centralized instance for data storage
+
+---
+
+### Dependency Injection
+- Controller receives Service via constructor
+- Service receives Repository via constructor
+
+Benefits:
+- Loose coupling
+- Easy testing
+- Ready for ASP.NET Core DI
+
+---
+
+### Immutability
+- QuantityMeasurementEntity is effectively immutable
+- Values assigned via constructor only
+
+---
+
+### Serialization
+- Uses System.Text.Json (recommended)
+- Enables optional persistence of data
+
+---
+
+### Custom Exception
+- QuantityMeasurementException extends Exception
+- Centralized error handling
+
+---
+
+### Interface Segregation Principle (ISP)
+- IQuantityMeasurementService → business operations only
+- IQuantityMeasurementRepository → data access only
+
+---
+
+### REST-Readiness
+- Controller methods:
+  - PerformCompare
+  - PerformConvert
+  - PerformAdd
+
+- Easily map to:
+  - POST /compare
+  - POST /convert
+  - POST /add
+
+- DTOs are JSON serializable
+
+---
+
+## Implementation Steps
+
+1. Add Helper Methods to Enums
+   - Implement measurement types in:
+     LengthUnit, WeightUnit, VolumeUnit, TemperatureUnit
+
+2. Define DTO and Model Objects
+   - QuantityDTO
+   - QuantityMeasurementEntity
+
+3. Create Repository Layer
+   - IQuantityMeasurementRepository
+   - QuantityMeasurementCacheRepository (Singleton)
+
+4. Create Custom Exception
+   - QuantityMeasurementException
+
+5. Create Business Layer
+   - IQuantityMeasurementService
+   - QuantityMeasurementService
+
+6. Create Controller Layer
+   - QuantityMeasurementController
+   - Implement PerformXXX methods
+
+7. Refactor Application Layer
+   - Use Menu (IMenu, Menu.cs)
+   - Call controller methods from Program.cs
+
+---
+
+## Preconditions
+
+- All UC1–UC14 functionalities implemented
+- Enums for measurement types defined
+- Understanding of OOP and SOLID principles
+
+## Postconditions
+
+- Application structured into layered architecture
+- All UC1–UC14 test cases pass
+- Business logic independent from UI
+- Easily extendable to API or database
+
+Code is:
+- Maintainable
+- Testable
+- Scalable
+---
+
+## Project Structure
+
+```
+QuantityMeasurementApp
+│
+├── QuantityMeasurementApp.Console
+│   ├── Controller
+│   │   └── QuantityMeasurementController.cs
+│   ├── Interface
+│   │   └── IMenu.cs
+│   ├── Menu
+│   │   └── Menu.cs
+│   ├── Program.cs
+│   ├── QuantityMeasurementApp.Console.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppBusinessLayer
+│   ├── Exception
+│   │   └── QuantityMeasurementException.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementService.cs
+│   ├── Service
+│   │   └── QuantityMeasurementService.cs
+│   ├── QuantityMeasurementAppBusinessLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppModelLayer
+│   ├── DTOs
+│   │   └── QuantityDTO.cs
+│   ├── Enums
+│   │   ├── LengthUnit.cs
+│   │   ├── TemperatureUnit.cs
+│   │   ├── VolumeUnit.cs
+│   │   └── WeightUnit.cs
+│   ├── Models
+│   │   └── QuantityMeasurementEntity.cs
+│   ├── QuantityMeasurementAppModelLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppRepositoryLayer
+│   ├── Cache
+│   │   └── QuantityMeasurementCacheRepository.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementRepository.cs
+│   ├── QuantityMeasurementAppRepositoryLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementApp.sln
+└── README.md
+
+```
+---
+
+## 📅 Date: 30 March 2026
+
+# UC16: Database Integration with ADO.NET for Quantity Measurement Persistence
+
+## Overview
+
+UC16 extends the Quantity Measurement Application by introducing **persistent database storage through ADO.NET** (C# Data Access). Building upon the N-Tier architecture established in UC15, this use case implements a `QuantityMeasurementDatabaseRepository` class that replaces the in-memory `QuantityMeasurementCacheRepository` for long-term data persistence.
+
+This use case also introduces a **professional MSBuild/NuGet project structure** with proper namespace organization, comprehensive test coverage, and automated database schema creation. The refactoring maintains full backward compatibility while providing the ability to switch between in-memory cache and database storage through dependency injection and factory patterns.
+
+---
+
+## Objective
+
+- Restructure the project to follow .NET standard directory layout with `.csproj`
+- Organize classes into namespaces by layer: `Controller`, `Service`, `Repository`, `Entity`, `Exception`, `Unit`, `Util`
+- Configure `.csproj` / `NuGet.config` with all required dependencies and build plugins
+- Implement `QuantityMeasurementDatabaseRepository` using ADO.NET for full CRUD operations
+- Implement `ApplicationConfig` for loading `appsettings.json` / `app.config`
+- Implement `ConnectionPool` for efficient database connection management
+- Create `DatabaseException` for database-specific error handling
+- Create SQLite / H2Sharp database schema for development and testing
+- Replace `Console.WriteLine` with NLog structured logging
+- Write unit tests for Repository, Service, and Controller layers using MSTest / NUnit
+- Write integration tests for end-to-end database persistence verification
+
+---
+
+## Features
+
+- Full .NET project structure with MSBuild and NuGet package management
+- ADO.NET-based `QuantityMeasurementDatabaseRepository` with `Save`, `FindAll`, `FindByOperation`, `FindByType`, `Count`, `DeleteAll`
+- Custom `ConnectionPool` for reusable, thread-safe database connections
+- `ApplicationConfig` class for environment-aware properties loading from `appsettings.json`
+- SQLite for development and testing; SQL Server / PostgreSQL for production
+- Parameterized SQL queries preventing SQL injection
+- Transaction management ensuring data consistency
+- NLog structured logging throughout all layers
+- `DatabaseException` extending `QuantityMeasurementException`
+- Enhanced `IQuantityMeasurementRepository` with query methods, count, deleteAll, pool statistics, and resource release
+- Unit tests: `QuantityMeasurementDatabaseRepositoryTest`, `QuantityMeasurementServiceTest`, `QuantityMeasurementControllerTest`
+- Integration tests: `QuantityMeasurementIntegrationTest`
+
+---
+
+## Project Structure
+
+```
+QuantityMeasurementApp
+│
+├── QuantityMeasurementApp.Console
+│   ├── Controller
+│   │   └── QuantityMeasurementController.cs
+│   ├── Menu
+│   │   └── Menu.cs
+│   ├── Program.cs
+│   ├── QuantityMeasurementApp.Console.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppBusinessLayer
+│   ├── Exception
+│   │   └── QuantityMeasurementException.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementService.cs
+│   ├── Service
+│   │   └── QuantityMeasurementService.cs
+│   ├── QuantityMeasurementAppBusinessLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppModelLayer
+│   ├── DTOs
+│   │   └── QuantityDTO.cs
+│   ├── Enums
+│   │   ├── LengthUnit.cs
+│   │   ├── TemperatureUnit.cs
+│   │   ├── VolumeUnit.cs
+│   │   └── WeightUnit.cs
+│   ├── Models
+│   │   ├── QuantityMeasurementEntity.cs
+│   │   └── QuantityModel.cs
+│   ├── QuantityMeasurementAppModelLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppRepositoryLayer
+│   ├── Database
+│   │   └── QuantityMeasurementDatabase.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementRepository.cs
+│   ├── Utils
+│   │   └── DbConnection.cs
+│   ├── QuantityMeasurementAppRepositoryLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementApp.sln
+└── README.md
+```
+
+---
+
+## Disadvantages of UC15 Addressed
+
+| UC15 Limitation | UC16 Solution |
+|-----------------|---------------|
+| In-memory cache lost on application crash | ADO.NET database provides durable, crash-safe persistence |
+| Serialized file not scalable or human-readable | Relational database with SQL queryable by any tool |
+| No concurrent access support | Connection pool handles multiple threads safely |
+| No filtering or aggregation capabilities | SQL queries support filtering by operation type, measurement type, count, etc. |
+| No schema enforcement on stored data | Database schema with typed columns and constraints |
+| Difficult to inspect stored data externally | Any SQL client can query the database directly |
+| No integration with enterprise tools | ADO.NET standard connects to BI tools, reporting engines, monitoring systems |
+| Testing tied to file system state | SQLite in-memory database creates clean isolated test state per test run |
+
+---
+
+## Concepts Used
+
+### .NET Project Structure
+- Standard directory hierarchy with `.csproj`
+- Namespace organization by architectural layer
+- NuGet package management for dependencies
+
+### ADO.NET (C# Data Access)
+- Low-level, vendor-neutral database access API
+- Explicit management of `SqlConnection`, `SqlCommand` (`DbCommand`), and `SqlDataReader` (`DbDataReader`)
+- `using` statements ensure all resources are automatically disposed
+
+### Connection Pooling
+- `ConnectionPool` maintains a pool of pre-created, reusable database connections
+- Reduces overhead of opening and closing connections per operation
+- Thread-safe with `lock` statements for acquiring and releasing connections
+- Configurable pool size, timeout, and idle connection management
+
+### Parameterized SQL Queries
+- All SQL uses `@param` placeholders via `SqlCommand.Parameters`
+- Separates SQL structure from user-supplied data
+- Eliminates SQL injection vulnerabilities entirely
+
+### Transaction Management
+- Multiple related operations wrapped in a single atomic transaction
+- `connection.BeginTransaction()` with explicit `Commit()` or `Rollback()`
+- Ensures all-or-nothing semantics for data consistency
+
+### Configuration Management
+- `ApplicationConfig` reads from `appsettings.json` using `Microsoft.Extensions.Configuration`
+- Supports environment-specific overrides via environment variables
+- Centralizes all configuration — no hardcoded connection strings in code
+
+### Custom Exception Hierarchy
+- `DatabaseException` extends `QuantityMeasurementException`
+- Wraps low-level `SqlException` with meaningful domain-level messages
+- Propagates to service layer without exposing ADO.NET internals
+
+### Database Schema Design
+- `quantity_measurement_entity` table stores all operation records
+- `quantity_measurement_history` table provides audit trail
+- Indexes on frequently queried columns for performance
+- Timestamps track when operations occurred
+
+### NLog Structured Logging
+- Replaces all `Console.WriteLine` calls with `Logger.Info()`, `Logger.Error()`, etc.
+- NLog configuration in `nlog.config` controls log levels and output targets
+- Structured logs improve debugging, monitoring, and production observability
+
+### SQLite In-Memory Database for Testing
+- Lightweight, zero-configuration database for unit and integration tests
+- Schema auto-created from `schema.sql` before each test run
+- Completely isolated from production database — no test data pollution
+
+### Repository Interface Enhancement
+- `IQuantityMeasurementRepository` extended with:
+  - `GetMeasurementsByOperation(string operationType)`
+  - `GetMeasurementsByType(string measurementType)`
+  - `GetTotalCount()`
+  - `DeleteAll()`
+  - `GetPoolStatistics()` (default interface method)
+  - `ReleaseResources()` (default interface method)
+
+---
+
+## Build Commands
+
+```bash
+dotnet restore                                              # Restore NuGet packages
+dotnet build                                               # Compile the project
+dotnet run                                                 # Run the application
+dotnet test                                                # Run all tests
+dotnet publish -c Release                                  # Build release output
+dotnet test --filter "FullyQualifiedName~IntegrationTest"  # Run integration tests only
+```
+
+---
+
+## Preconditions
+
+- All functionality from UC1–UC15 is fully operational
+- N-Tier architecture with `IQuantityMeasurementRepository` is established
+- .NET SDK 8.0+ installed and configured
+- Understanding of ADO.NET, SQL, and relational database concepts
+
+## Postconditions
+
+- Professional .NET project structure fully established
+- All measurements persisted to SQLite/SQL Server database automatically during operations
+- Historical data accessible through repository query methods
+- Connection pool statistics available for monitoring
+- All UC1–UC15 tests pass without modification
+- `dotnet test` runs all tests successfully
+- Release output created by `dotnet publish`
+
+---
+
+## 📅 Date: 02 April 2026
+
+# UC17: ASP.NET Core REST API with Full Enterprise Architecture
+
+## Overview
+
+UC17 marks the **full web-tier introduction** — rebuilding the Quantity Measurement Application as a fully featured **ASP.NET Core REST API**. This use case introduces RESTful service design, the Model-View-Controller (MVC) pattern, Entity Framework Core ORM, CQRS design pattern, and a full suite of professional tooling including Swagger, Postman, MSTest, and NLog.
+
+The business logic, architecture patterns, and domain knowledge from UC1–UC16 are extended and exposed over HTTP — reinforcing that good architectural principles translate directly into modern API development.
+
+---
+
+## Objective
+
+- Build a fully functional ASP.NET Core WebAPI implementing RESTful services
+- Apply the MVC pattern with Controllers, Routing, and HTTP verb mapping
+- Integrate Entity Framework Core with LINQ to Entities for ORM-based persistence
+- Implement the CQRS (Command Query Responsibility Segregation) design pattern
+- Apply LINQ for data querying across the application
+- Implement the Pub-Sub (Publish-Subscribe) pattern for event-driven operations
+- Add ASP.NET Core Identity for user management and session handling
+- Configure WebAPI Filters for cross-cutting concerns (validation, logging, exception handling)
+- Enforce code quality with StyleCop / Roslyn Analyzers
+- Write unit tests with MSTest
+- Implement structured logging with NLog
+- Test APIs with Postman
+- Document APIs with Swagger / OpenAPI
+
+---
+
+## Features
+
+- RESTful endpoints: `GET /api/quantity/compare`, `POST /api/quantity/convert`, `POST /api/quantity/add`, `POST /api/quantity/subtract`, `POST /api/quantity/divide`
+- Entity Framework Core with `DbContext`, `DbSet<T>`, code-first Migrations
+- LINQ to Entities queries replacing raw SQL
+- CQRS pattern separating read (Query) and write (Command) operations
+- Pub-Sub pattern for publishing measurement operation events
+- ASP.NET Core Identity for authentication and session management
+- WebAPI Filters: `ActionFilter`, `ExceptionFilter`, `AuthorizationFilter`
+- Swagger UI for interactive API documentation and testing
+- NLog structured logging with file and console targets
+- MSTest unit tests for Controller, Service, and Repository layers
+- Postman collection for manual API testing and automation
+
+---
+
+## Project Structure
+
+```
+QuantityMeasurementApp
+│
+├── QuantityMeasurementApp.Api
+│   ├── Controller
+│   │   └── QuantityMeasurementAPIController.cs
+│   ├── Properties
+│   ├── appsettings.json
+│   ├── appsettings.Development.json
+│   ├── Program.cs
+│   ├── QuantityMeasurementApp.Api.csproj
+│   ├── QuantityMeasurementApp.Api.http
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppBusinessLayer
+│   ├── Exception
+│   │   └── QuantityMeasurementException.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementService.cs
+│   ├── Service
+│   │   └── QuantityMeasurementService.cs
+│   ├── QuantityMeasurementAppBusinessLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppModelLayer
+│   ├── DTOs
+│   │   ├── LoginDTO.cs
+│   │   ├── QuantityDTO.cs
+│   │   └── QuantityInputDTO.cs
+│   ├── Enums
+│   │   ├── LengthUnit.cs
+│   │   ├── TemperatureUnit.cs
+│   │   ├── VolumeUnit.cs
+│   │   └── WeightUnit.cs
+│   ├── Entity
+|   |    └── QuantityMeasurementEntity.cs
+│   ├── QuantityMeasurementAppModelLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppRepositoryLayer
+│   ├── Data
+│   │   └── UserDbContext.cs
+│   ├── Database
+│   │   └── QuantityMeasurementRepository.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementRepository.cs
+│   ├── Migrations
+│   │   ├── 20260325051649_InitialCreate.cs
+│   │   ├── 20260325051649_InitialCreate.Designer.cs
+│   │   ├── 20260325094008_QuantityTable.cs
+│   │   ├── 20260325094008_QuantityTable.Designer.cs
+│   │   └── UserDbContextModelSnapshot.cs
+│   ├── Utils
+│   │   └── DbConnection.cs
+│   ├── QuantityMeasurementAppRepositoryLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementApp.sln
+└── README.md
+```
+
+---
+
+## Disadvantages of UC16 Addressed
+
+| UC16 Limitation | UC17 Solution |
+|-----------------|---------------|
+| No HTTP API exposure | ASP.NET Core WebAPI exposes all operations as REST endpoints |
+| Raw ADO.NET requires verbose boilerplate SQL | Entity Framework Core with LINQ eliminates raw SQL |
+| No standard API contract documentation | Swagger / OpenAPI auto-generates interactive API docs |
+| No event-driven decoupling | Pub-Sub pattern decouples operation publishers from consumers |
+| Read and write logic mixed in service layer | CQRS cleanly separates Query (read) and Command (write) paths |
+| No user identity or session management | ASP.NET Core Identity provides full user management and sessions |
+| Console logging only | NLog provides structured, configurable, multi-target logging |
+
+---
+
+## Concepts Used
+
+### ASP.NET Core WebAPI
+- Lightweight, high-performance framework for building HTTP services
+- Built-in dependency injection container (`IServiceCollection`)
+- Middleware pipeline for request/response processing
+- Attribute-based routing: `[HttpGet]`, `[HttpPost]`, `[Route]`
+
+### RESTful Service Design
+- Resource-based URL design: `/api/quantity`
+- HTTP verbs map to operations: `GET` for queries, `POST` for commands
+- Stateless communication — no server-side session state for API calls
+- Standardized JSON request/response bodies via `System.Text.Json`
+
+### MVC Pattern
+- **Model**: `QuantityDTO`, `QuantityModel`, `QuantityMeasurementEntity`
+- **View**: JSON responses (API — no HTML views)
+- **Controller**: `QuantityMeasurementController` routes requests to service layer
+
+### Minimal APIs (ASP.NET Core)
+- Lightweight endpoint definition without full controller classes
+- `app.MapGet()`, `app.MapPost()` for route registration
+- Suitable for microservice-style endpoints
+
+### Entity Framework Core
+- ORM mapping C# classes to database tables
+- `DbContext` manages database connection and change tracking
+- `DbSet<T>` represents a database table
+- LINQ to Entities: type-safe queries compiled to SQL
+- Code-first Migrations: schema changes tracked and applied via `dotnet ef migrations add`
+
+### CQRS (Command Query Responsibility Segregation)
+- **Commands**: Write operations — `AddQuantityCommand`, `ConvertQuantityCommand`
+- **Queries**: Read operations — `GetAllMeasurementsQuery`, `GetMeasurementsByTypeQuery`
+- Separates read and write models for scalability and clarity
+- Handlers process commands and queries independently
+
+### LINQ
+- Language-Integrated Query syntax for collections and databases
+- `Where`, `Select`, `OrderBy`, `GroupBy` used throughout service and repository layers
+- Strongly typed — compile-time query validation
+
+### Pub-Sub Pattern
+- `MeasurementPerformedEvent` published after every operation
+- Subscribers can independently react (logging, notifications, analytics)
+- Decouples event producers from consumers
+
+### ASP.NET Core Identity
+- Built-in user management: registration, login, roles
+- Session management for authenticated users
+- Integration with WebAPI for protected endpoints
+
+### WebAPI Filters
+- `ActionFilter`: runs before/after controller actions (validation, logging)
+- `ExceptionFilter`: centralized exception handling and error response formatting
+- `AuthorizationFilter`: enforces access control rules
+
+### StyleCop / Roslyn Analyzers
+- Static code analysis enforcing C# coding style conventions
+- Ensures consistent naming, spacing, and documentation across the codebase
+- Integrated into the build pipeline — style violations treated as build warnings or errors
+
+### MSTest
+- Microsoft's unit testing framework for .NET
+- `[TestClass]`, `[TestMethod]`, `[TestInitialize]`, `[TestCleanup]` attributes
+- Assertions via `Assert.AreEqual`, `Assert.IsNotNull`, `Assert.ThrowsException`
+
+### NLog
+- Structured logging framework for .NET
+- Configurable targets: file, console, database
+- Log levels: Trace, Debug, Info, Warn, Error, Fatal
+- Replaces `Console.WriteLine` throughout all layers
+
+### Swagger / OpenAPI
+- Auto-generates interactive API documentation from controller annotations
+- Accessible at `/swagger` — test endpoints directly from the browser
+- `[ProducesResponseType]` attributes document response types and status codes
+
+### Postman
+- GUI tool for manually testing REST API endpoints
+- Collections for organizing and running multiple API tests
+- Environment variables for switching between dev/test/prod configurations
+- Automated test scripts with `pm.test()` assertions
+
+---
+
+## REST Endpoints
+
+### Quantity Measurement APIs
+
+| Method | Endpoint                                           | Description                              | Auth Required |
+|--------|----------------------------------------------------|------------------------------------------|---------------|
+| POST   | /api/quantity/compare                              | Compare two quantities                   | Yes (JWT)     |
+| POST   | /api/quantity/add                                  | Add two quantities                       | Yes (JWT)     |
+| POST   | /api/quantity/subtract                             | Subtract quantities                      | Yes (JWT)     |
+| POST   | /api/quantity/divide                               | Divide quantities                        | Yes (JWT)     |
+| POST   | /api/quantity/convert                              | Convert quantity between units           | Yes (JWT)     |
+| GET    | /api/quantity/history                              | Get all operation history                | Yes (JWT)     |
+
+---
+
+## Build Commands
+
+```bash
+dotnet new webapi -n QuantityMeasurementAPI    # Create project
+dotnet restore                                  # Restore packages
+dotnet build                                    # Build project
+dotnet run                                      # Run API
+dotnet test                                     # Run all tests
+dotnet ef migrations add InitialCreate          # Create EF migration
+dotnet ef database update                       # Apply migration to database
+```
+
+---
+
+## Preconditions
+
+- All UC1–UC16 functionality understood and implemented
+- .NET SDK 8.0+ installed
+- Understanding of C#, HTTP protocol, REST principles
+- Entity Framework Core concepts understood
+
+## Postconditions
+
+- Fully functional ASP.NET Core REST API serving all quantity measurement operations
+- EF Core migrations managing database schema
+- Swagger UI documenting all endpoints
+- All MSTest unit tests passing
+- Postman collection verifying all endpoints manually and automatically
+- NLog writing structured logs to file and console
+
+---
+
+
+## 📅 Date: 04 April 2026
+
+# UC18: .NET Security — JWT, OAuth 2.0, Encryption and Hashing
+
+## Overview
+
+UC18 secures the ASP.NET Core REST API built in UC17 by implementing industry-standard authentication and authorization mechanisms. This use case introduces **JWT (JSON Web Tokens)** for stateless API authentication, **OAuth 2.0** for delegated authorization flows, **encryption and decryption** for protecting sensitive data at rest and in transit, and **hashing algorithms** for secure password storage.
+
+Security is not an afterthought — UC18 integrates these mechanisms as foundational middleware layers that protect every endpoint in the Quantity Measurement API.
+
+---
+
+## Objective
+
+- Implement JWT-based authentication for stateless API security
+- Implement OAuth 2.0 authorization flows for delegated access
+- Secure all REST API endpoints with `[Authorize]` attribute and JWT bearer tokens
+- Implement encryption and decryption for sensitive data
+- Implement hashing algorithms for secure password storage
+- Add token refresh, expiry, and revocation mechanisms
+- Apply security best practices: HTTPS enforcement, CORS policy, rate limiting
+- Extend MSTest suite with security-focused test cases
+
+---
+
+## Features
+
+- JWT generation with claims (user ID, roles, expiry)
+- JWT validation middleware in ASP.NET Core pipeline
+- OAuth 2.0 authorization code flow and client credentials flow
+- `[Authorize]` and `[AllowAnonymous]` attributes on controller endpoints
+- Role-based access control (RBAC) using JWT claims
+- Symmetric encryption (AES-256) for sensitive data at rest
+- Asymmetric encryption (RSA) for secure key exchange
+- BCrypt password hashing with salt
+- SHA-256 and SHA-512 hashing for data integrity verification
+- Token refresh endpoint with refresh token rotation
+- HTTPS enforcement middleware
+- CORS policy configuration
+- Rate limiting middleware to prevent brute-force attacks
+- Security headers: `X-Content-Type-Options`, `X-Frame-Options`, `Strict-Transport-Security`
+
+---
+
+## Project Structure Additions
+
+```
+QuantityMeasurementApp
+│
+├── QuantityMeasurementApp.Api
+│   ├── Controller
+│   │   ├── AuthController.cs
+│   │   └── QuantityMeasurementAPIController.cs
+│   ├── Properties
+│   ├── appsettings.json
+│   ├── appsettings.Development.json
+│   ├── Program.cs
+│   ├── QuantityMeasurementApp.Api.csproj
+│   ├── QuantityMeasurementApp.Api.http
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppBusinessLayer
+│   ├── Exception
+│   │   └── QuantityMeasurementException.cs
+│   ├── Interface
+│   │   ├── IAuthService.cs
+│   │   └── IQuantityMeasurementService.cs
+│   ├── Service
+│   │   ├── QuantityMeasurementAuthService.cs
+│   │   └── QuantityMeasurementService.cs
+│   ├── QuantityMeasurementAppBusinessLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppModelLayer
+│   ├── DTOs
+│   │   ├── ConvertDTO.cs
+│   │   ├── GoogleLoginDTO.cs
+│   │   ├── LoginDTO.cs
+│   │   ├── QuantityDTO.cs
+│   │   ├── QuantityInputDTO.cs
+│   │   └── RegisterDTO.cs
+│   ├── Entity
+│   │   ├── QuantityMeasurementEntity.cs
+│   │   └── UserEntity.cs
+│   ├── Enums
+│   │   ├── LengthUnit.cs
+│   │   ├── TemperatureUnit.cs
+│   │   ├── VolumeUnit.cs
+│   │   └── WeightUnit.cs
+│   ├── QuantityMeasurementAppModelLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementAppRepositoryLayer
+│   ├── Data
+│   │   └── UserDbContext.cs
+│   ├── Database
+│   │   └── QuantityMeasurementRepository.cs
+│   ├── Interface
+│   │   └── IQuantityMeasurementRepository.cs
+│   ├── Migrations
+│   │   ├── 20260401104357_InitialCreate.cs
+│   │   ├── 20260401104357_InitialCreate.Designer.cs
+│   │   └── UserDbContextModelSnapshot.cs
+│   ├── Utils
+│   │   └── DbConnection.cs
+│   ├── QuantityMeasurementAppRepositoryLayer.csproj
+│   ├── bin/
+│   └── obj/
+│
+├── QuantityMeasurementApp.sln
+└── README.md
+```
+
+---
+
+## Disadvantages of UC17 Addressed
+
+| UC17 Limitation | UC18 Solution |
+|-----------------|---------------|
+| All endpoints publicly accessible — no authentication | JWT bearer token required for all protected endpoints |
+| Passwords stored without hashing | BCrypt adaptive hashing with salt applied to all passwords |
+| Sensitive data stored in plain text | AES-256 encryption applied to sensitive fields at rest |
+| No authorization — any authenticated user can do anything | Role-based and policy-based access control via JWT claims |
+| No protection against brute-force login attacks | Rate limiting middleware blocks excessive authentication attempts |
+| Tokens never expire or get revoked | Short-lived JWT + refresh token rotation with revocation support |
+| No transport security enforcement | HTTPS redirection and HSTS headers enforced |
+
+---
+
+## Concepts Used
+
+### JWT (JSON Web Tokens)
+- Three-part structure: `Header.Payload.Signature`
+- **Header**: algorithm and token type (`HS256`, `RS256`)
+- **Payload**: claims — `sub` (user ID), `role`, `exp` (expiry), `iat` (issued at), custom claims
+- **Signature**: HMAC-SHA256 or RSA signature ensuring token integrity
+- Stateless: server validates token without a database lookup on every request
+- `JwtSecurityTokenHandler` from `System.IdentityModel.Tokens.Jwt` for generation and validation
+
+### OAuth 2.0
+- Authorization framework for delegated access
+- **Authorization Code Flow**: user authenticates with identity provider; app receives authorization code exchanged for access token
+- **Client Credentials Flow**: machine-to-machine authentication without user interaction
+- **Scopes**: define what resources the token grants access to (`read:measurements`, `write:measurements`)
+- Integration with ASP.NET Core Identity and external providers
+
+### REST API Security
+- `[Authorize]` attribute on controllers/actions requires valid JWT bearer token
+- `[AllowAnonymous]` on login and registration endpoints
+- Role-based: `[Authorize(Roles = "Admin")]`
+- Policy-based: `[Authorize(Policy = "MeasurementWriter")]`
+- JWT bearer token passed in `Authorization: Bearer <token>` HTTP header
+
+### Encryption and Decryption
+- **AES (Advanced Encryption Standard)**: symmetric encryption for sensitive stored data
+  - 256-bit key, CBC mode with random IV
+  - `Aes.Create()` in `System.Security.Cryptography`
+- **RSA**: asymmetric encryption for secure key exchange and digital signatures
+  - Public key encrypts; private key decrypts
+  - `RSA.Create()` in `System.Security.Cryptography`
+
+### Hashing Algorithms
+- **BCrypt**: adaptive password hashing with built-in salt
+  - `BCrypt.Net.BCrypt.HashPassword(password)` — stores hash + salt together
+  - `BCrypt.Net.BCrypt.Verify(password, hash)` — validates without knowing salt separately
+  - Work factor configurable — increases cost as hardware improves
+- **SHA-256 / SHA-512**: cryptographic hash functions for data integrity
+  - One-way: cannot reverse hash to original input
+  - Deterministic: same input always produces same hash
+  - Used for API request signing, file integrity, audit logs
+  - `SHA256.Create()` / `SHA512.Create()` in `System.Security.Cryptography`
+
+### Token Refresh and Rotation
+- Short-lived access tokens (15 minutes) + long-lived refresh tokens (7 days)
+- Refresh token stored securely (hashed) in database
+- Token rotation: each refresh issues a new refresh token and invalidates the old one
+- Prevents refresh token theft from granting indefinite access
+
+### Security Middleware
+- **HTTPS Enforcement**: `app.UseHttpsRedirection()` — redirects all HTTP to HTTPS
+- **HSTS**: `app.UseHsts()` — instructs browsers to only use HTTPS
+- **CORS Policy**: `app.UseCors()` — restricts which origins can call the API
+- **Rate Limiting**: `app.UseRateLimiter()` (built-in .NET 7+) or custom middleware limiting requests per IP per time window
+- **Security Headers**: `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Content-Security-Policy`
+
+### Security Best Practices Applied
+- Never store plain-text passwords — always BCrypt hash
+- Never log JWT tokens or sensitive claims
+- Validate all input before processing (prevent injection)
+- Use environment variables or Azure Key Vault for secrets — never hardcode in `appsettings.json`
+- Rotate secrets regularly
+- Principle of least privilege: tokens carry only necessary claims
+
+---
+
+## Security Endpoints
+
+### Auth API
+
+| Method | Endpoint             | Description                          | Auth Required |
+|--------|--------------------|--------------------------------------|---------------|
+| POST   | /api/auth/register | Register new user                    | No            |
+| POST   | /api/auth/login    | Login user (returns JWT token)       | No            |
+
+### Quantity Measurement APIs
+
+| Method | Endpoint                                           | Description                              | Auth Required |
+|--------|----------------------------------------------------|------------------------------------------|---------------|
+| POST   | /api/quantity/compare                              | Compare two quantities                   | Yes (JWT)     |
+| POST   | /api/quantity/add                                  | Add two quantities                       | Yes (JWT)     |
+| POST   | /api/quantity/subtract                             | Subtract quantities                      | Yes (JWT)     |
+| POST   | /api/quantity/divide                               | Divide quantities                        | Yes (JWT)     |
+| POST   | /api/quantity/convert                              | Convert quantity between units           | Yes (JWT)     |
+| GET    | /api/quantity/history                              | Get all operation history                | Yes (JWT)     |
+
+---
+
+## Implementation Steps
+
+1. **Configure JWT Settings** — Add `JwtSettings` to `appsettings.json`: `SecretKey`, `Issuer`, `Audience`, `ExpiryMinutes`; register with Options pattern in DI
+2. **Implement JwtTokenService** — `GenerateAccessToken(user)`, `ValidateToken(token)`, `GenerateRefreshToken()`
+3. **Register JWT Bearer Authentication** — `builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(...)`; add `app.UseAuthentication()` and `app.UseAuthorization()`
+4. **Create AuthController** — `POST /register`, `POST /login`, `POST /refresh`, `POST /revoke`
+5. **Secure Existing Endpoints** — Add `[Authorize]` to `QuantityMeasurementController`; add role-based policies
+6. **Implement Encryption and Hashing Services** — `EncryptionService` (AES-256); `HashingService` (SHA-256, BCrypt wrapper)
+7. **Add Security Middleware** — `SecurityHeadersMiddleware`, `RateLimitingMiddleware`; register in `Program.cs`
+8. **Configure OAuth 2.0** — Register OAuth 2.0 provider; implement client credentials flow
+9. **Write Security Tests** — JWT generation/validation, BCrypt hashing, 401/403 responses, rate limiting, token refresh
+
+---
+
+## Build Commands
+
+```bash
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package BCrypt.Net-Next
+dotnet add package System.IdentityModel.Tokens.Jwt
+dotnet run                    # Run secured API
+dotnet test                   # Run all tests including security tests
+```
+
+---
+
+## Preconditions
+
+- All UC1–UC17 functionality is fully operational
+- ASP.NET Core WebAPI with all endpoints functional
+- ASP.NET Core Identity configured (from UC17)
+- Understanding of HTTP authentication headers, JWT structure, OAuth 2.0 flows
+
+## Postconditions
+
+- All API endpoints protected by JWT bearer authentication
+- Passwords stored as BCrypt hashes — never plain text
+- Sensitive data encrypted at rest with AES-256
+- OAuth 2.0 flows implemented for external authorization scenarios
+- Token refresh with rotation implemented and tested
+- Security headers applied to all HTTP responses
+- Rate limiting active on authentication endpoints
+- All security-focused MSTest tests passing
