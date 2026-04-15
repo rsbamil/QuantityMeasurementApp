@@ -72,5 +72,21 @@ namespace QuantityMeasurementAPI.Controllers
             var history = service.GetHistory();
             return Ok(history);
         }
+
+        [HttpPost("convert")]
+        public IActionResult Convert([FromBody] ConvertDTO input)
+        {
+            if(input.Quantity1==null || string.IsNullOrWhiteSpace(input.Quantity1.Unit))
+            {
+                return BadRequest(new {message = "Invalid Input"});
+            }
+            if (string.IsNullOrWhiteSpace(input.TargetUnit))
+            {
+                return BadRequest(new {message = "Target unit is required."});
+            }
+
+            var result = service.Convert(input.Quantity1,input.TargetUnit);
+            return Ok(result);
+        }
     }
 }

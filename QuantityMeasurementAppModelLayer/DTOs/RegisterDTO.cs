@@ -10,7 +10,7 @@ namespace QuantityMeasurementAppModelLayer.DTOs
         [EmailAddress(ErrorMessage = "Invalid email format.")]
         public string? Email { get; set; }
 
-        [MaxLength(6, ErrorMessage = "Password must be at least 6 characters long.")]
+        [MinLength(6, ErrorMessage = "Password must be at least 6 characters long.")]
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "Phone number is required.")]

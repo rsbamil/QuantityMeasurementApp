@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {}
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {}
   },
   "projects": {
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
+        "projectUniqueName": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
         "projectName": "QuantityMeasurementAppModelLayer",
-        "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
+        "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\obj\\",
+        "outputPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

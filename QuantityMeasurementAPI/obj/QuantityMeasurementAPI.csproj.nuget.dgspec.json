@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {}
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {}
   },
   "projects": {
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
+        "projectUniqueName": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
         "projectName": "QuantityMeasurementAPI",
-        "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
+        "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\obj\\",
+        "outputPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj": {
-                "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj"
+              "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj": {
+                "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj"
               },
-              "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
-                "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
+              "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
+                "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
               }
             }
           }
@@ -540,14 +540,14 @@
         }
       }
     },
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj": {
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj",
+        "projectUniqueName": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj",
         "projectName": "QuantityMeasurementAppBusinessLayer",
-        "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj",
+        "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\QuantityMeasurementAppBusinessLayer.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\obj\\",
+        "outputPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppBusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -569,11 +569,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
-                "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
+              "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
+                "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
               },
-              "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj": {
-                "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj"
+              "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj": {
+                "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj"
               }
             }
           }
@@ -897,14 +897,14 @@
         }
       }
     },
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
+        "projectUniqueName": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
         "projectName": "QuantityMeasurementAppModelLayer",
-        "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
+        "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\obj\\",
+        "outputPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1237,14 +1237,14 @@
         }
       }
     },
-    "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj": {
+    "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj",
+        "projectUniqueName": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj",
         "projectName": "QuantityMeasurementAppRepositoryLayer",
-        "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj",
+        "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\QuantityMeasurementAppRepositoryLayer.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\obj\\",
+        "outputPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppRepositoryLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1266,8 +1266,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
-                "projectPath": "D:\\rohit mase\\QuantityMeasurementApp\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
+              "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj": {
+                "projectPath": "D:\\QuantityMeasurementAppAPI\\QuantityMeasurementAppModelLayer\\QuantityMeasurementAppModelLayer.csproj"
               }
             }
           }
@@ -1288,9 +1288,19 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
-            "Microsoft.Data.SqlClient": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[10.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.5, )"
             }
           },
           "imports": [
