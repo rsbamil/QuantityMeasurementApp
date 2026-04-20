@@ -1,0 +1,6 @@
+@QuantityMeasurement.Gateway_HostAddress = http://localhost:5286
+
+GET {{QuantityMeasurement.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "igjjrSq5Cl8=",
+  "success": true,
+  "projectFilePath": "D:\\csharp\\Microservices\\QuantityMeasurement.History\\QuantityMeasurement.History.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rohit\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "C:\\Users\\Rohit\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
